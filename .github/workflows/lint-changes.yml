@@ -1,0 +1,22 @@
+name: lint-changes
+
+on:
+  pull_request:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  lint-changes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check required change artifacts
+        run: |
+          for dir in changes/*; do
+            [ -d "$dir" ] || continue
+            test -f "$dir/proposal.md"
+            test -f "$dir/spec.md"
+            test -f "$dir/design.md"
+            test -f "$dir/tasks.md"
+          done
