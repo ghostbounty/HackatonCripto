@@ -11,7 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Install framework prerequisites
+        run: ./scripts/install.sh
       - name: Run setup
         run: ./scripts/setup.sh
-      - name: Validate structure
+      - name: Validate autonomous framework structure
         run: ./scripts/validate-structure.sh

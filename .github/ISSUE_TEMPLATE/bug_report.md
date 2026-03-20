@@ -9,6 +9,7 @@ assignees: ''
 ## Contexto
 
 - Change relacionado:
+- Slice afectado:
 - Ruta(s) relevante(s):
 - Referencia en `docs/product/`:
 
@@ -16,4 +17,14 @@ assignees: ''
 
 ## Comportamiento esperado
 
-## Evidencia / verify
+## Testing impactado
+
+- Seed o fixture involucrada:
+- Formulario o endpoint afectado:
+- Evidencia de `sdd-test`:
+
+## Condicion de cierre
+
+- [ ] Reproduccion clara
+- [ ] Criterio de aceptacion definido
+- [ ] Verify esperado identificado

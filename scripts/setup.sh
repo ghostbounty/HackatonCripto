@@ -14,32 +14,45 @@ root = Path('.')
 skills_dir = root / 'skills'
 out = root / '.atl' / 'skill-registry.md'
 
+def section(text: str, title: str) -> str:
+    match = re.search(rf'^# {re.escape(title)}\n\n(.*?)(?=^# |\Z)', text, re.S | re.M)
+    if not match:
+        return ''
+    return ' '.join(line.strip() for line in match.group(1).strip().splitlines() if line.strip())
+
+def clean(value: str) -> str:
+    return value.replace('|', '/').replace('\n', ' ').strip()
+
 entries = []
 for skill_md in sorted(skills_dir.glob('*/SKILL.md')):
     text = skill_md.read_text(encoding='utf-8')
-    rel = skill_md.parent.as_posix()
     name_match = re.search(r'^name:\s*(.+)$', text, re.M)
     desc_match = re.search(r'^description:\s*(.+)$', text, re.M)
-    def section(title):
-        m = re.search(rf'^# {re.escape(title)}\n\n(.*?)(?=^# |\Z)', text, re.S | re.M)
-        return ' '.join(line.strip() for line in m.group(1).strip().splitlines()) if m else ''
-    trigger = desc_match.group(1).strip() if desc_match else ''
-    inputs = section('Inputs')
-    outputs = section('Outputs / artifacts')
-    entries.append((name_match.group(1).strip() if name_match else skill_md.parent.name, rel, trigger, inputs, outputs))
+    entries.append((
+        name_match.group(1).strip() if name_match else skill_md.parent.name,
+        skill_md.parent.as_posix(),
+        desc_match.group(1).strip() if desc_match else '',
+        section(text, 'Inputs'),
+        section(text, 'Outputs / artifacts'),
+        section(text, 'Done criteria'),
+        section(text, 'Blocking criteria'),
+        section(text, 'Next allowed skill'),
+    ))
 
 lines = [
     '# Skill Registry',
     '',
-    'Índice regenerable de skills. Regenerar con `./scripts/setup.sh` o `pwsh ./scripts/setup.ps1`.',
+    'Indice regenerable de skills. Regenerar con `./scripts/setup.sh` o `pwsh ./scripts/setup.ps1`.',
     '',
-    '| Skill | Path | Trigger | Inputs | Outputs |',
-    '| --- | --- | --- | --- | --- |',
+    '| Skill | Path | Trigger | Inputs | Outputs | Done | Blocks | Next |',
+    '| --- | --- | --- | --- | --- | --- | --- | --- |',
 ]
-for name, path, trigger, inputs, outputs in entries:
-    def clean(value):
-        return value.replace('|', '/').replace('\n', ' ').strip()
-    lines.append(f'| `{name}` | `{path}` | {clean(trigger)} | {clean(inputs)} | {clean(outputs)} |')
+
+for name, path, trigger, inputs, outputs, done, blocks, next_skill in entries:
+    lines.append(
+        f'| `{name}` | `{path}` | {clean(trigger)} | {clean(inputs)} | {clean(outputs)} | {clean(done)} | {clean(blocks)} | {clean(next_skill)} |'
+    )
+
 out.write_text('\n'.join(lines) + '\n', encoding='utf-8')
 PY
 

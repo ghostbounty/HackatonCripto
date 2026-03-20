@@ -1,33 +1,59 @@
 ---
 name: sdd-tasks
-description: Desglosar un change en tareas accionables dentro de changes/<change-name>/tasks.md. Usar cuando se requiera convertir proposal/spec/design en un plan ejecutable y verificable por fases.
+description: Desglosar un change en tareas accionables dentro de changes/<change-name>/tasks.md. Usar cuando se requiera convertir proposal, spec y design en un plan ejecutable y verificable por fases.
 ---
 
-# Propósito
+# Proposito
 
-Convertir el change en trabajo secuenciado y verificable.
+Convertir el change en trabajo secuenciado por slices pequenos, accionables y verificables.
 
-# Cuándo usarla
+# Cuando usarla
 
-Usar tras cerrar proposal/spec/design o cuando el checklist necesite mantenimiento.
+Usar tras cerrar proposal, spec y design o cuando el checklist necesite mantenimiento.
 
 # Inputs
 
 - `proposal.md`
 - `spec.md`
 - `design.md`
-- Convención compartida de tareas
-
-# Pasos esperados
-
-1. Agrupar trabajo por fase.
-2. Crear checklist accionable.
-3. Referir rutas y dependencias concretas.
-4. Preparar tareas para verificación posterior.
+- Convencion compartida de tareas
 
 # Outputs / artifacts
 
 - `changes/<change-name>/tasks.md`
+
+# Done criteria
+
+- El trabajo esta partido en slices pequenos.
+- Cada slice tiene criterio de aceptacion.
+- Cada slice declara testing, seeds y verify asociados.
+- El orden de ejecucion respeta el loop autonomo.
+
+# Blocking criteria
+
+- Proposal, spec o design no permiten una particion segura.
+- Las tareas mezclan multiples slices sin gate intermedio.
+
+# Next allowed skill
+
+- `sdd-apply`
+
+# Pasos esperados
+
+1. Agrupar trabajo por slices.
+2. Crear checklist accionable.
+3. Referir rutas y dependencias concretas.
+4. Anadir para cada slice:
+   - criterio de aceptacion,
+   - seeds demo necesarias,
+   - pruebas esperadas,
+   - gate para continuar.
+
+# Reglas de autonomia
+
+- No producir listas enormes sin prioridad.
+- Cada slice debe poder completarse, probarse y verificarse en una iteracion corta.
+- Si no se puede probar un slice por separado, dividirlo de nuevo.
 
 # Rutas concretas del repo
 

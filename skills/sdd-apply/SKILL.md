@@ -1,36 +1,60 @@
 ---
 name: sdd-apply
-description: Aplicar cambios en documentación, código o estructura siguiendo el change activo. Usar cuando proposal, spec, design y tasks ya definieron qué debe implementarse o alinearse dentro del repositorio.
+description: Aplicar cambios en documentacion, codigo o estructura siguiendo el change activo. Usar cuando proposal, spec, design y tasks ya definieron que debe implementarse o alinearse dentro del repositorio.
 ---
 
-# Propósito
+# Proposito
 
-Ejecutar el change preservando trazabilidad y compatibilidad estructural.
+Ejecutar el slice activo preservando trazabilidad, compatibilidad estructural y readiness para testing inmediato.
 
-# Cuándo usarla
+# Cuando usarla
 
-Usar al materializar artifacts o implementación derivada del change.
+Usar al materializar artifacts o implementacion derivada del change.
 
 # Inputs
 
 - Artifacts del change activo
 - Convenciones del repo
-- Scripts de setup/validación
-
-# Pasos esperados
-
-1. Aplicar cambios mínimos necesarios.
-2. Mantener enlaces entre docs, skills y changes.
-3. Regenerar artifacts auxiliares cuando corresponda.
-4. Preparar evidencia para verify y PR.
+- Scripts de setup y validacion
 
 # Outputs / artifacts
 
 - Archivos modificados o creados
 - Referencias actualizadas
+- Slice listo para `sdd-test`
+
+# Done criteria
+
+- Se aplicaron solo los cambios minimos necesarios del slice.
+- Los cambios mantienen enlaces entre docs, skills y changes.
+- El slice queda preparado para seeds, formularios y endpoints a validar.
+- Existe un hand-off claro hacia `sdd-test`.
+
+# Blocking criteria
+
+- El trabajo necesario excede el slice definido.
+- La implementacion rompe artifacts preservados o requiere decisiones no resueltas.
+
+# Next allowed skill
+
+- `sdd-test`
+
+# Pasos esperados
+
+1. Aplicar cambios minimos necesarios.
+2. Mantener enlaces entre docs, skills y changes.
+3. Regenerar artifacts auxiliares cuando corresponda.
+4. Preparar evidencia y contexto para testing.
+
+# Reglas de autonomia
+
+- No marcar un slice como terminado al finalizar la edicion.
+- Si el cambio no puede probarse inmediatamente, reducir el alcance del slice o detenerse.
+- Evitar refactors amplios que retrasen el siguiente gate.
 
 # Rutas concretas del repo
 
 - `docs/product/`
 - `changes/`
 - `.atl/`
+- `scripts/`

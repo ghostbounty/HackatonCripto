@@ -12,4 +12,12 @@ assignees: ''
 
 ## Contexto funcional (`docs/product/`)
 
+## Slice inicial sugerido
+
 ## Acceptance criteria
+
+## Testing and verify
+
+- Seeds demo necesarias:
+- Formularios o endpoints a validar:
+- Gate esperado antes de continuar:

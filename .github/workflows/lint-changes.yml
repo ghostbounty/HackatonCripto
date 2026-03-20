@@ -20,3 +20,8 @@ jobs:
             test -f "$dir/design.md"
             test -f "$dir/tasks.md"
           done
+      - name: Check autonomous gate references
+        run: |
+          grep -q "sdd-test" AGENTS.md
+          grep -q "decision-gate" AGENTS.md
+          grep -q "Playwright CLI" docs/testing-strategy.md

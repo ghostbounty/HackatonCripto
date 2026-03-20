@@ -10,7 +10,18 @@ assignees: ''
 
 ## Problema a resolver
 
+## Slice inicial propuesto
+
 ## Alcance
+
+## Criterio de aceptacion
+
+## Plan de testing y seeds
+
+- [ ] Seeds demo definidas
+- [ ] Formularios a validar
+- [ ] Endpoints a validar
+- [ ] Gate de verify definido
 
 ## Artifacts esperados
 

@@ -1,13 +1,20 @@
-# Arquitectura del framework de trabajo
+# Arquitectura operativa del framework
 
 ## Objetivo
 
 Este repositorio combina dos capas que deben convivir sin interferirse:
 
-1. **Capa funcional del dominio** en `docs/product/`.
-2. **Capa operativa del framework** en `docs/`, `skills/`, `scripts/`, `.atl/`, `examples/` y `.github/`.
+1. Capa funcional del dominio en `docs/product/`.
+2. Capa operativa del framework en `docs/`, `skills/`, `scripts/`, `.atl/`, `.github/` y `examples/`.
 
-La arquitectura busca agregar estructura faltante sin mover ni romper los artifacts ya existentes del producto y de los changes.
+La arquitectura busca permitir sesiones largas de vibecoding con alta autonomia, sin mover ni romper los artifacts funcionales ya existentes del producto y de los changes.
+
+## Principios de operacion
+
+- El agente trabaja por slices pequenos y verificables.
+- Ningun slice se considera completo sin testing y verify.
+- El repo debe dar suficiente contexto para explorar antes de preguntar.
+- El framework debe decirle al agente cuando continuar, cuando reintentar y cuando detenerse.
 
 ## Capas principales
 
@@ -22,7 +29,7 @@ La arquitectura busca agregar estructura faltante sin mover ni romper los artifa
 
 ### 2. Unidad de cambio
 
-`changes/<change-name>/` es el contenedor obligatorio de trabajo para cada PR o iniciativa trazable. Debe reunir, según aplique:
+`changes/<change-name>/` es el contenedor obligatorio de trabajo para cada PR o iniciativa trazable. Debe reunir, segun aplique:
 
 - `proposal.md`
 - `spec.md`
@@ -30,16 +37,9 @@ La arquitectura busca agregar estructura faltante sin mover ni romper los artifa
 - `tasks.md`
 - `verify-checklist.md` o `verify.md`
 
-Esta convención preserva la compatibilidad con los changes existentes:
-
-- `changes/traceable-volunteering-with-demo-crypto/`
-- `changes/stretch-merit-reputation/`
-
 ### 3. Capa de skills
 
-`skills/` organiza el flujo SDD en skills discretas. Las skills se consumen desde `AGENTS.md` y se registran en `.atl/skill-registry.md`.
-
-Orden operativo recomendado:
+`skills/` organiza el flujo SDD en skills discretas. El orden operativo recomendado y obligatorio por slice es:
 
 1. `sdd-init`
 2. `sdd-explore`
@@ -48,28 +48,39 @@ Orden operativo recomendado:
 5. `sdd-design`
 6. `sdd-tasks`
 7. `sdd-apply`
-8. `sdd-verify`
-9. `issue-creation`
-10. `branch-pr`
-11. `sdd-archive`
+8. `sdd-test`
+9. `sdd-verify`
+10. `decision-gate`
+11. `next-slice` o `stop`
 
-### 4. Automatización y artifacts regenerables
+### 4. Capa de testing y evidencia
 
-- `scripts/setup.sh` y `scripts/setup.ps1` refrescan `.atl/skill-registry.md`.
-- `scripts/validate-structure.sh` valida la estructura base del repo.
-- `.atl/skill-registry.md` es regenerable; no debe editarse como fuente única.
+La validacion de comportamiento del framework se apoya en:
 
-## Flujo completo para un solo change
+- Playwright CLI como herramienta estandar de journeys
+- seeds demo del marketplace para formularios y endpoints
+- evidencia corta de `pass`, `retry-needed` o `stop`
 
-1. Alinear la estructura base si hace falta.
-2. Explorar `docs/product/` y los changes existentes.
-3. Crear o actualizar `changes/<change-name>/proposal.md`.
-4. Continuar con `spec.md`, `design.md`, `tasks.md` y `verify`.
-5. Aplicar cambios estructurales o de implementación.
-6. Regenerar artifacts auxiliares.
-7. Validar estructura y consistencia.
-8. Abrir un único PR enfocado en un solo change principal.
+El objetivo no es que el agente programe indefinidamente, sino que avance de forma segura y medible.
+
+### 5. Automatizacion y artifacts regenerables
+
+- `scripts/install.sh` y `scripts/install.ps1` validan prerequisitos del entorno autonomo.
+- `scripts/setup.sh` y `scripts/setup.ps1` regeneran `.atl/skill-registry.md`.
+- `scripts/validate-structure.sh` valida la estructura base del repo y la coherencia del loop autonomo.
+- `.atl/skill-registry.md` es regenerable; no debe editarse como fuente unica.
+
+## Decision gate
+
+Entre slices existe una compuerta explicita. El agente solo puede continuar si:
+
+- el slice tiene criterio de aceptacion claro,
+- hay evidencia de seeds y testing,
+- la estructura sigue alineada,
+- no existen fallas repetidas sin resolver.
+
+Si el gate falla, el agente corrige el slice actual o se detiene con contexto accionable.
 
 ## Compatibilidad preservada
 
-La alineación del framework no modifica el contenido existente de `docs/product/` ni reubica los changes vigentes. La nueva capa documental referencia esos artifacts en lugar de reemplazarlos.
+La alineacion del framework no modifica el contenido existente de `docs/product/` ni reubica los changes vigentes. La nueva capa documental referencia esos artifacts en lugar de reemplazarlos.
