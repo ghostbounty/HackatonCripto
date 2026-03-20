@@ -2,21 +2,23 @@
 
 ## Principio base
 
-La alineación del framework agrega estructura pero no reemplaza la persistencia documental existente.
+La alineacion del framework agrega estructura y reencuadra la tesis operativa, pero no reemplaza la persistencia documental existente.
 
-## Qué debe permanecer estable
+## Que debe permanecer estable
 
-- `docs/product/` como contexto funcional.
+- `docs/product/` como contexto funcional preservado.
 - `changes/` como historial y unidad de trabajo.
-- `.gitattributes` como configuración existente de fin de línea.
+- `legacy/` como area de archivo explicita para implementaciones previas.
+- `.gitattributes` como configuracion existente de fin de linea.
 
-## Qué es regenerable
+## Que es regenerable
 
 - `.atl/skill-registry.md`
-- Cualquier índice auxiliar documentado por `scripts/setup.*`
+- Cualquier indice auxiliar documentado por `scripts/setup.*`
 
 ## Contrato de compatibilidad
 
 - No mover artifacts funcionales existentes.
 - No asumir que un change nuevo invalida los changes previos.
-- Referir los documents preservados desde `README.md`, `AGENTS.md` y `docs/architecture.md`.
+- Tratar los changes existentes como historial legado cuando el framing operativo actual los exceda.
+- Referir la frontera entre activo y legado desde `README.md`, `AGENTS.md` y `docs/architecture.md`.

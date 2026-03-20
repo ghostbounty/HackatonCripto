@@ -30,6 +30,7 @@ Usar despues de `sdd-test` y antes de archivar o abrir PR.
 
 - Las validaciones automaticas y estructurales fueron ejecutadas.
 - Existe evidencia suficiente de testing del slice.
+- Se valido consistencia entre AGENTS, docs, skills, scripts, registry y templates con el pivot.
 - El repo, el change y el flujo operativo siguen alineados.
 - Hay una decision clara sobre si se puede avanzar al siguiente slice.
 - `progress.md` refleja el estado real mas reciente del change.

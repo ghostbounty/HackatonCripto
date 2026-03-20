@@ -1,23 +1,69 @@
 # HackatonCripto
 
-Repositorio base para trabajar cambios orientados a especificación (`changes/`) sobre el dominio funcional del hackathon documentado en `docs/product/`.
+Repositorio base para un MVP de GenLayer centrado en decisiones subjetivas auditables y ejecutables on-chain. La experiencia activa del repo parte de un baseline limpio para adjudicacion, mientras `docs/product/` y `changes/` anteriores se conservan como historial preservado.
 
-## Qué contiene este framework
+## Fuente activa de verdad
 
-- Un índice operativo del repositorio en `AGENTS.md`.
-- Un conjunto de skills en `skills/` para recorrer un flujo SDD completo.
-- Documentación del framework en `docs/` sin alterar los artifacts funcionales de `docs/product/`.
-- Scripts en `scripts/` para instalar, preparar y validar la estructura.
-- Un registro regenerable de skills en `.atl/skill-registry.md`.
-- Templates de colaboración en `.github/`.
+Para trabajo actual, leer en este orden:
 
-## Estructura raíz esperada
+1. `AGENTS.md`
+2. `docs/architecture.md`
+3. `docs/archive-boundary.md`
+4. `genlayer-mvp/README.md`
+5. `docs/testing-strategy.md`
 
-La raíz del repo debe exponer explícitamente:
+## Tesis operativa actual
+
+La tesis activa del framework es:
+
+- decisiones subjetivas auditables y ejecutables on-chain alrededor de GenLayer
+
+El caso canonico del baseline es:
+
+- aceptar o rechazar evidencia estructurada para liberar sponsorship o cerrar un milestone solo cuando la adjudicacion del Intelligent Contract lo respalde
+
+La UX y los artifacts deben distinguir siempre:
+
+- `accepted` como decision aceptada por consenso inicial
+- `finalized` como estado final estable del protocolo
+
+## Baseline activo
+
+El baseline activo vive en `genlayer-mvp/` y expone un scaffold minimo para:
+
+- intake del caso
+- politica de evidencia
+- receipts y estados observables
+- puntos de integracion con GenLayer
+
+Ese scaffold es la ruta por defecto para nuevos cambios. `backend/` y `frontend/` ya no son rutas activas del baseline.
+
+## Material preservado
+
+- `docs/product/` permanece intacto como contexto historico del hackathon
+- `changes/` existentes permanecen intactos como historial legado
+- `legacy/marketplace-demo/` conserva la implementacion previa solo como referencia archivada
+
+Ese material puede consultarse, pero no define el MVP actual. La frontera exacta esta en `docs/archive-boundary.md`.
+
+## Flujo de trabajo recomendado
+
+1. Leer `AGENTS.md`, `docs/architecture.md` y `docs/archive-boundary.md`.
+2. Revisar `docs/product/` solo como contexto preservado.
+3. Crear o actualizar un unico `changes/<change-name>/`.
+4. Mantener `proposal/spec/design/tasks/progress/verify`.
+5. Implementar contra `genlayer-mvp/` o contra el framework activo, no contra el material archivado.
+6. Ejecutar `scripts/setup.sh` o `scripts/setup.ps1` si cambian skills.
+7. Ejecutar `scripts/validate-structure.sh` o `scripts/validate-structure.ps1`.
+8. Abrir un PR con un solo change principal.
+
+## Estructura raiz esperada
 
 - `AGENTS.md`
 - `README.md`
 - `CONTRIBUTING.md`
+- `genlayer-mvp/`
+- `legacy/`
 - `skills/`
 - `scripts/`
 - `examples/`
@@ -26,53 +72,23 @@ La raíz del repo debe exponer explícitamente:
 - `.atl/`
 - `.github/`
 
-## Contexto funcional preservado
-
-Los siguientes artifacts se preservan como referencia de negocio del hackathon:
-
-- `docs/product/hackathon-vision.md`
-- `docs/product/domain-rules.md`
-- `docs/product/blockchain-scope.md`
-- `docs/product/demo-script.md`
-
-## Changes existentes preservados
-
-- `changes/traceable-volunteering-with-demo-crypto/`
-- `changes/stretch-merit-reputation/`
-
-Cada change debe mantener sus artifacts dentro de `changes/<change-name>/` y seguir el patrón `proposal/spec/design/tasks/verify`.
-
-## Flujo recomendado para un solo change por PR
-
-1. Leer `AGENTS.md` y `docs/architecture.md`.
-2. Revisar `docs/product/` para entender el contexto funcional.
-3. Crear o actualizar `changes/<change-name>/proposal.md`.
-4. Continuar con `spec.md`, `design.md`, `tasks.md` y `verify-checklist.md`.
-5. Aplicar cambios de implementación si corresponden.
-6. Ejecutar `scripts/setup.sh` o `scripts/setup.ps1` para refrescar artifacts auxiliares.
-7. Ejecutar `scripts/validate-structure.sh`.
-8. Abrir un solo PR que refiera un único change principal y mantenga trazabilidad.
-
-## Criterios de aceptación para este framework alignment
-
-- La estructura raíz debe coincidir con la lista anterior.
-- Cada subcarpeta de `skills/` debe contener un `SKILL.md`.
-- `docs/product/` y `changes/` deben permanecer compatibles con su estructura actual.
-- La documentación debe dejar explícito cómo trabajar un solo change y abrir futuros PRs con el mismo patrón.
-
-## Comandos útiles
+## Comandos utiles
 
 ```bash
+./scripts/install.sh
 ./scripts/setup.sh
 ./scripts/validate-structure.sh
-pwsh ./scripts/setup.ps1
 pwsh ./scripts/install.ps1
+pwsh ./scripts/setup.ps1
+pwsh ./scripts/validate-structure.ps1
 ```
 
 ## Lecturas relacionadas
 
-- Framework y decisiones: `docs/architecture.md`
-- Instalación y bootstrap: `docs/installation.md`
+- Arquitectura activa: `docs/architecture.md`
+- Frontera de archivo: `docs/archive-boundary.md`
+- Scaffold activo: `genlayer-mvp/README.md`
+- Instalacion y bootstrap: `docs/installation.md`
 - Conceptos del flujo: `docs/concepts.md`
 - Persistencia de artifacts: `docs/persistence.md`
-- Ejemplos para herramientas: `examples/`
+- Estrategia de testing y seeds: `docs/testing-strategy.md`, `docs/seed-fixtures.md`

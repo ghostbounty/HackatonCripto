@@ -31,9 +31,10 @@ Usar inmediatamente despues de `sdd-apply` y antes de `sdd-verify`.
 # Done criteria
 
 - El entorno minimo de testing fue comprobado.
-- Las seeds demo del marketplace relevantes al slice existen, se prepararon o se verificaron.
+- Las seeds demo del caso relevantes al slice existen, se prepararon o se verificaron.
 - Se validaron formularios y endpoints del slice con Playwright CLI o con evidencia equivalente prevista por el repo.
-- Se registraron claramente resultados, fallas y supuestos.
+- Se cubrieron escenarios de evidencia suficiente, debil o contradictoria cuando aplicaba al slice.
+- Se registraron claramente resultados, fallas, supuestos y estados observados, incluyendo `ACCEPTED` y `FINALIZED` si el slice los tocaba.
 - Existe una conclusion binaria: `pass`, `retry-needed` o `stop`.
 - `progress.md` deja la ultima evidencia de testing y el siguiente paso exacto.
 
@@ -53,12 +54,12 @@ Usar inmediatamente despues de `sdd-apply` y antes de `sdd-verify`.
 # Pasos esperados
 
 1. Confirmar prerequisitos del entorno autonomo.
-2. Preparar o verificar las seeds demo del marketplace:
-   - proyecto,
-   - voluntario,
-   - tarea,
-   - merito,
-   - sponsorship.
+2. Preparar o verificar las seeds demo del caso:
+   - proyecto o caso,
+   - sponsor o funding,
+   - tarea o milestone,
+   - evidencia estructurada,
+   - adjudicacion o receipt.
 3. Ejecutar o guiar la validacion de journeys clave con Playwright CLI.
 4. Comprobar formularios y endpoints afectados por el slice.
 5. Dejar evidencia corta y accionable para el gate siguiente.

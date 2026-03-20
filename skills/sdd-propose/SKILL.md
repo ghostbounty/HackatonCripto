@@ -1,6 +1,6 @@
 ---
 name: sdd-propose
-description: Redactar o ajustar la propuesta de un change en changes/<change-name>/proposal.md. Usar cuando se necesite definir intencion, problema, alcance, riesgos, rollback y criterios iniciales del cambio.
+description: Redactar o ajustar la propuesta de un change en changes/<change-name>/proposal.md. Usar cuando se necesite definir intencion, problema, alcance, riesgos, rollback y criterios iniciales del cambio alrededor de una decision auditable.
 ---
 
 # Proposito
@@ -24,6 +24,7 @@ Usar cuando falte `proposal.md`, cuando la propuesta requiera realineacion o cua
 # Done criteria
 
 - El problema y el valor del slice quedan claros.
+- La propuesta se formula alrededor de adjudicacion inteligente y estados auditables, no solo de receipts visibles.
 - El alcance y fuera de alcance estan definidos.
 - Se describen riesgos, rollback y criterio inicial de exito.
 - El slice queda listo para especificarse sin ambiguedad alta.

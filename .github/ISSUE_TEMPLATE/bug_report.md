@@ -12,14 +12,20 @@ assignees: ''
 - Slice afectado:
 - Ruta(s) relevante(s):
 - Referencia en `docs/product/`:
+- Ruta activa o archivada:
 
 ## Comportamiento actual
 
 ## Comportamiento esperado
 
+## Politica de evidencia afectada
+
+- Fuente o fixture involucrado:
+- Senal considerada prueba fuerte:
+- Estado `accepted/finalized` observado, si aplica:
+
 ## Testing impactado
 
-- Seed o fixture involucrada:
 - Formulario o endpoint afectado:
 - Evidencia de `sdd-test`:
 - Estado reportado en `progress.md`:

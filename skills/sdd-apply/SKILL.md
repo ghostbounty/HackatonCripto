@@ -28,7 +28,7 @@ Usar al materializar artifacts o implementacion derivada del change.
 
 - Se aplicaron solo los cambios minimos necesarios del slice.
 - Los cambios mantienen enlaces entre docs, skills y changes.
-- El slice queda preparado para seeds, formularios y endpoints a validar.
+- El slice queda preparado para seeds, formularios, endpoints y estados a validar.
 - Existe un hand-off claro hacia `sdd-test`.
 - `progress.md` refleja que cambio y que queda listo para probar.
 

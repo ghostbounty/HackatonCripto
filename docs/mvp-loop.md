@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Definir como el agente decide avanzar al siguiente slice o detenerse.
+Definir como el agente decide avanzar al siguiente slice o detenerse en un MVP centrado en adjudicacion inteligente y auditable sobre el baseline activo.
 
 ## Flujo
 
@@ -22,9 +22,13 @@ Definir como el agente decide avanzar al siguiente slice o detenerse.
 El siguiente slice solo puede comenzar si:
 
 - el slice actual cumple su criterio de aceptacion,
+- la decision subjetiva del slice esta acotada,
+- existe politica de evidencia documentada,
 - el testing paso,
 - verify paso,
 - `progress.md` fue actualizado con el estado real mas reciente,
+- si aplica, hay evidencia de `ACCEPTED` y `FINALIZED`,
+- el trabajo nuevo se apoya en `genlayer-mvp/` o en docs activas, no en rutas archivadas como baseline,
 - no hay bloqueos repetidos,
 - existe claridad suficiente para el siguiente paso.
 

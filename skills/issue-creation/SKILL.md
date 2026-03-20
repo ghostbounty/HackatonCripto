@@ -24,7 +24,7 @@ Usar cuando el backlog deba reflejar proposal, spec, design o tasks de un change
 # Done criteria
 
 - El issue referencia el change correcto.
-- Incluye criterio de aceptacion, testing y condicion de cierre.
+- Incluye criterio de aceptacion, testing, politica de evidencia y condicion de cierre.
 - La granularidad sigue el patron de slices pequenos.
 
 # Blocking criteria

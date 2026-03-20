@@ -1,6 +1,6 @@
 ---
 name: sdd-spec
-description: Redactar o ajustar la especificacion delta de un change en changes/<change-name>/spec.md. Usar cuando sea necesario formalizar requisitos ADDED, MODIFIED, REMOVED y escenarios de aceptacion sobre la base de docs/product.
+description: Redactar o ajustar la especificacion delta de un change en changes/<change-name>/spec.md. Usar cuando sea necesario formalizar requisitos ADDED, MODIFIED, REMOVED, estados y escenarios de aceptacion sobre la base de docs/product.
 ---
 
 # Proposito
@@ -25,6 +25,7 @@ Usar despues de la propuesta y antes de diseno o implementacion.
 
 - Los cambios funcionales estan expresados como deltas claros.
 - Hay escenarios de aceptacion verificables.
+- La spec define inputs estructurados, outputs restringidos y estados observables cuando el slice toca adjudicacion.
 - El criterio de prueba del slice queda explicitado.
 - La spec es consistente con el dominio y el loop autonomo.
 

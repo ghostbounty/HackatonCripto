@@ -14,7 +14,9 @@ Usar esta estructura en `changes/<change-name>/progress.md`.
 
 - Slice:
 - Objetivo del slice:
+- Decision subjetiva del slice:
 - Responsable actual:
+- Superficie activa o archivada tocada:
 
 ## Ultimo gate aprobado
 
@@ -38,10 +40,18 @@ Usar esta estructura en `changes/<change-name>/progress.md`.
 
 - ...
 
+## Politica de evidencia vigente
+
+- Fuentes permitidas:
+- Prueba fuerte:
+- Contexto auxiliar:
+- Limites o riesgos:
+
 ## Ultima evidencia de testing o verify
 
 - Tipo:
 - Resultado:
+- Estados observados:
 - Referencia:
 
 ## Siguiente paso exacto

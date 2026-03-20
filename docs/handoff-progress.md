@@ -37,12 +37,19 @@ El agente activo debe actualizar `progress.md`:
 - trabajo pendiente inmediato,
 - bloqueos activos,
 - decisiones y supuestos vigentes,
+- politica de evidencia vigente,
 - ultima evidencia de testing o verify,
 - siguiente paso exacto para el siguiente agente.
 
 ## Regla de handoff
 
 Un change no es retomable si `progress.md` no refleja el estado real mas reciente. Si hay contradiccion entre el repo y `progress.md`, el agente debe corregir el archivo antes de continuar.
+
+Durante el baseline reset y en trabajo futuro, `progress.md` tambien debe dejar claro si el slice opero sobre:
+
+- `genlayer-mvp/` como baseline activo,
+- `legacy/` solo como referencia archivada,
+- o `docs/product/` como contexto preservado.
 
 ## Resultado esperado
 
@@ -52,4 +59,5 @@ Otro agente debe poder responder solo leyendo `progress.md`:
 - que falta,
 - que bloquea,
 - que gate fue el ultimo en pasar,
+- cual es la politica de evidencia vigente,
 - cual es el siguiente paso exacto.

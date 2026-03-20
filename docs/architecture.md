@@ -2,34 +2,49 @@
 
 ## Objetivo
 
-Este repositorio combina dos capas que deben convivir sin interferirse:
+Este repositorio separa tres capas con contratos distintos:
 
-1. Capa funcional del dominio en `docs/product/`.
-2. Capa operativa del framework en `docs/`, `skills/`, `scripts/`, `.atl/`, `.github/` y `examples/`.
+1. `docs/product/` como dominio historico preservado.
+2. `genlayer-mvp/` como baseline activo para nuevos slices.
+3. `legacy/` como archivo de implementaciones previas que no deben guiar trabajo nuevo.
 
-La arquitectura busca permitir sesiones largas de vibecoding con alta autonomia, sin mover ni romper los artifacts funcionales ya existentes del producto y de los changes.
+La arquitectura busca que cualquier agente pueda retomar el repo sin confundir el material preservado con la direccion activa del MVP.
+
+## Tesis operativa actual
+
+El framework existe para construir un MVP de adjudicacion inteligente y auditable sobre GenLayer.
+
+Caso canonico:
+
+- un sponsor fondea un caso o milestone,
+- el ejecutor presenta evidencia estructurada segun una politica definida,
+- un Intelligent Contract formula una pregunta estrecha y emite una decision acotada,
+- la app muestra decision, justificacion breve y estado del receipt,
+- el timeline off-chain avanza por `accepted` y luego `finalized`.
 
 ## Principios de operacion
 
 - El agente trabaja por slices pequenos y verificables.
-- Ningun slice se considera completo sin testing y verify.
-- El repo debe dar suficiente contexto para explorar antes de preguntar.
-- El framework debe decirle al agente cuando continuar, cuando reintentar y cuando detenerse.
+- Ningun slice se considera completo sin `sdd-test` y `sdd-verify`.
+- La politica de evidencia se disena antes de implementar.
+- La IA opera con inputs estructurados, fuentes permitidas y outputs restringidos.
+- El baseline activo debe verse limpio aunque el historial legado permanezca accesible.
 
-## Capas principales
+## Frontera entre activo y legado
 
-### 1. Contexto funcional del dominio
+`docs/product/` y los `changes/` historicos se preservan sin reescritura. Su valor es contextual, no normativo para el baseline actual.
 
-`docs/product/` conserva el contexto del hackathon y sigue siendo la fuente de verdad de negocio. Referencias preservadas:
+El trabajo nuevo debe seguir:
 
-- `docs/product/hackathon-vision.md`
-- `docs/product/domain-rules.md`
-- `docs/product/blockchain-scope.md`
-- `docs/product/demo-script.md`
+- `AGENTS.md`
+- `docs/archive-boundary.md`
+- `genlayer-mvp/README.md`
 
-### 2. Unidad de cambio
+El material en `legacy/marketplace-demo/` queda fuera de la ruta recomendada para nuevos cambios.
 
-`changes/<change-name>/` es el contenedor obligatorio de trabajo para cada PR o iniciativa trazable. Debe reunir, segun aplique:
+## Unidad de cambio
+
+`changes/<change-name>/` es el contenedor obligatorio para cada iniciativa trazable. Debe reunir, segun aplique:
 
 - `proposal.md`
 - `spec.md`
@@ -38,9 +53,52 @@ La arquitectura busca permitir sesiones largas de vibecoding con alta autonomia,
 - `progress.md`
 - `verify-checklist.md` o `verify.md`
 
-### 3. Capa de skills
+Los `changes/` previos se preservan como historial. El baseline actual se construye agregando nuevos changes, no reinterpretando los anteriores.
 
-`skills/` organiza el flujo SDD en skills discretas. El orden operativo recomendado y obligatorio por slice es:
+## Modelo operativo del MVP
+
+Estado de negocio recomendado:
+
+- `draft`
+- `funded`
+- `evidence_submitted`
+- `under_adjudication`
+- `accepted`
+- `finalized`
+- `needs_revision`
+- `undetermined`
+- `appealed`
+- `canceled`
+
+El framework exige distinguir:
+
+- decision de negocio,
+- estado tecnico del receipt,
+- estado visible en UX.
+
+`accepted` y `finalized` no son equivalentes.
+
+## Baseline activo
+
+`genlayer-mvp/` es un scaffold operativo minimo con cuatro zonas:
+
+- `cases/` para el intake estructurado del caso
+- `evidence-policies/` para reglas permitidas de evidencia
+- `receipts/` para el contrato visible entre decision y protocolo
+- `integration/` para puntos de integracion con GenLayerJS
+
+Ese scaffold existe para que la siguiente implementacion parta de un contrato claro y no del legado archivado.
+
+## Distribucion de responsabilidades
+
+- Dominio off-chain: intake, metadata, audit trail y timeline del caso.
+- Contrato GenLayer: decision critica, justificacion breve y estado verificable.
+- UX del baseline: visualizacion de evidencia, decision y recibos con distincion entre `accepted` y `finalized`.
+- SDK recomendado para el camino principal: GenLayerJS.
+
+## Capa de skills
+
+`skills/` organiza el flujo SDD en skills discretas. El orden operativo obligatorio por slice es:
 
 1. `sdd-init`
 2. `sdd-explore`
@@ -54,35 +112,31 @@ La arquitectura busca permitir sesiones largas de vibecoding con alta autonomia,
 10. `decision-gate`
 11. `next-slice` o `stop`
 
-### 4. Capa de testing y evidencia
+## Capa de testing y evidencia
 
-La validacion de comportamiento del framework se apoya en:
+La validacion del framework se apoya en:
 
-- Playwright CLI como herramienta estandar de journeys
-- seeds demo del marketplace para formularios y endpoints
-- evidencia corta de `pass`, `retry-needed` o `stop`
+- Playwright CLI como herramienta estandar de journeys,
+- seeds demo del caso de adjudicacion,
+- evidencia breve de `pass`, `retry-needed` o `stop`,
+- receipts o evidencia equivalente para `ACCEPTED` y `FINALIZED` cuando el slice toca GenLayer.
 
-El objetivo no es que el agente programe indefinidamente, sino que avance de forma segura y medible.
+## Automatizacion y artifacts regenerables
 
-### 5. Automatizacion y artifacts regenerables
-
-- `scripts/install.sh` y `scripts/install.ps1` validan prerequisitos del entorno autonomo.
-- `scripts/setup.sh` y `scripts/setup.ps1` regeneran `.atl/skill-registry.md`.
-- `scripts/validate-structure.sh` valida la estructura base del repo y la coherencia del loop autonomo.
-- `.atl/skill-registry.md` es regenerable; no debe editarse como fuente unica.
+- `scripts/install.*` validan prerequisitos y crean estructura base del baseline activo.
+- `scripts/setup.*` regeneran `.atl/skill-registry.md`.
+- `scripts/validate-structure.*` validan la frontera entre activo y legado, el lenguaje del pivot y la presencia del nuevo scaffold.
+- `.atl/skill-registry.md` es derivado.
 
 ## Decision gate
 
 Entre slices existe una compuerta explicita. El agente solo puede continuar si:
 
 - el slice tiene criterio de aceptacion claro,
-- hay evidencia de seeds y testing,
+- existe evidencia de seeds, testing y politica de evidencia,
+- hay estados observables del caso,
 - `progress.md` refleja el estado vivo mas reciente,
-- la estructura sigue alineada,
+- la estructura sigue alineada con el baseline activo,
 - no existen fallas repetidas sin resolver.
 
 Si el gate falla, el agente corrige el slice actual o se detiene con contexto accionable.
-
-## Compatibilidad preservada
-
-La alineacion del framework no modifica el contenido existente de `docs/product/` ni reubica los changes vigentes. La nueva capa documental referencia esos artifacts en lugar de reemplazarlos.

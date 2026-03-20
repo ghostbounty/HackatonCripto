@@ -25,7 +25,7 @@ Usar al final del flujo, antes de abrir o actualizar un PR.
 # Done criteria
 
 - Existe un change principal por PR.
-- El resumen incluye fase o slice, seeds usadas y evidencia de testing.
+- El resumen incluye fase o slice, seeds usadas, politica de evidencia y evidencia de testing.
 - El PR deja claro si el agente puede seguir o si debe detenerse.
 
 # Blocking criteria

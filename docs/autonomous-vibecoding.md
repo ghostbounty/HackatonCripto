@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Dejar el repo listo para que cualquier persona lo clone y pueda ejecutar un agente durante horas con supervision minima, manteniendo control de calidad y decisiones explicitas.
+Dejar el repo listo para que cualquier persona lo clone y pueda ejecutar un agente durante horas con supervision minima, manteniendo control de calidad, decisiones explicitas y evidencia auditable.
 
 ## Contrato del agente
 
@@ -13,7 +13,10 @@ El agente debe:
 - registrar supuestos cuando el repo no resuelva un detalle menor,
 - persistir el estado vivo del change en `changes/<change-name>/progress.md`,
 - validar con frecuencia,
-- detener el avance cuando falle un gate.
+- detener el avance cuando falle un gate,
+- disenar decisiones subjetivas estrechas con outputs restringidos,
+- distinguir `accepted` de `finalized` cuando el slice toque GenLayer,
+- evitar que material archivado se use como baseline activo por accidente.
 
 ## Loop operativo
 
@@ -21,7 +24,7 @@ Cada iteracion sigue este patron:
 
 1. descubrir el contexto del slice,
 2. proponer y especificar lo minimo necesario,
-3. disenar para testabilidad,
+3. disenar para testabilidad y politica de evidencia,
 4. implementar solo el slice actual,
 5. preparar seeds demo,
 6. ejecutar pruebas del slice,

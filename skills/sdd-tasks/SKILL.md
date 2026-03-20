@@ -27,7 +27,7 @@ Usar tras cerrar proposal, spec y design o cuando el checklist necesite mantenim
 
 - El trabajo esta partido en slices pequenos.
 - Cada slice tiene criterio de aceptacion.
-- Cada slice declara testing, seeds y verify asociados.
+- Cada slice declara testing, seeds, verify y politica de evidencia asociados.
 - Cada slice puede reportarse de forma clara en `progress.md`.
 - El orden de ejecucion respeta el loop autonomo.
 

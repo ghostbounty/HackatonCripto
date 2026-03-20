@@ -1,6 +1,6 @@
 ---
 name: sdd-explore
-description: Explorar el contexto funcional y tecnico existente antes de proponer cambios. Usar cuando sea necesario leer docs/product, changes vigentes y documentacion marco para comprender alcance, restricciones e impacto.
+description: Explorar el contexto funcional y tecnico existente antes de proponer cambios. Usar cuando sea necesario leer docs/product, changes vigentes y documentacion marco para comprender alcance, restricciones, fuentes de evidencia e impacto.
 ---
 
 # Proposito
@@ -28,7 +28,8 @@ Usar al inicio de un change o antes de ajustar proposal, spec, design o tasks.
 # Done criteria
 
 - Se leyeron los artifacts funcionales obligatorios del dominio.
-- Se identificaron cambios relacionados y restricciones operativas.
+- Se identificaron changes relacionados y restricciones operativas.
+- Se detecto si el slice toca decision subjetiva, fuentes de evidencia, estados del caso o integracion con GenLayerJS.
 - Se documentaron riesgos, dependencias y supuestos relevantes.
 - El agente puede proponer sin preguntas evitables.
 
@@ -46,8 +47,9 @@ Usar al inicio de un change o antes de ajustar proposal, spec, design o tasks.
 1. Leer `docs/product/`.
 2. Identificar changes relacionados en `changes/`.
 3. Revisar la documentacion operativa del framework.
-4. Resumir restricciones, dependencias y decisiones previas.
-5. Preparar un mapa de impacto para proposal, spec, design y tasks.
+4. Resumir restricciones, dependencias, estados y decisiones previas.
+5. Detectar politica de evidencia existente o faltante.
+6. Preparar un mapa de impacto para proposal, spec, design y tasks.
 
 # Reglas de autonomia
 

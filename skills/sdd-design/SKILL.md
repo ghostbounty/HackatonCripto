@@ -1,6 +1,6 @@
 ---
 name: sdd-design
-description: Redactar o ajustar el diseno tecnico de un change en changes/<change-name>/design.md. Usar cuando la spec requiera decisiones de arquitectura, modelo de datos, integracion, persistencia o tradeoffs antes de ejecutar tareas.
+description: Redactar o ajustar el diseno tecnico de un change en changes/<change-name>/design.md. Usar cuando la spec requiera decisiones de arquitectura, modelo de datos, integracion, persistencia, politica de evidencia o tradeoffs antes de ejecutar tareas.
 ---
 
 # Proposito
@@ -24,6 +24,7 @@ Usar cuando el change necesite arquitectura, flujos tecnicos, integraciones, per
 # Done criteria
 
 - Los componentes afectados y el flujo tecnico quedan definidos.
+- El diseno fija el perimetro pequeno de IA, la separacion entre off-chain y on-chain y la politica de fuentes permitidas.
 - El diseno contempla como se sembraran datos demo o se verificaran endpoints y formularios.
 - Los tradeoffs y supuestos tecnicos estan documentados.
 - `sdd-tasks` puede particionar el trabajo en slices verificables.
