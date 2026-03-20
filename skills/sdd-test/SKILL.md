@@ -15,6 +15,7 @@ Usar inmediatamente despues de `sdd-apply` y antes de `sdd-verify`.
 
 - Slice activo ya implementado o alineado
 - `docs/product/`
+- `docs/design-system.md` cuando el slice toque UI o evidencia visual
 - `docs/testing-strategy.md`
 - `docs/seed-fixtures.md`
 - Scripts de instalacion, setup y validacion
@@ -35,6 +36,7 @@ Usar inmediatamente despues de `sdd-apply` y antes de `sdd-verify`.
 - Se validaron formularios y endpoints del slice con Playwright CLI o con evidencia equivalente prevista por el repo.
 - Se cubrieron escenarios de evidencia suficiente, debil o contradictoria cuando aplicaba al slice.
 - Se registraron claramente resultados, fallas, supuestos y estados observados, incluyendo `ACCEPTED` y `FINALIZED` si el slice los tocaba.
+- Si el slice toca UI, existe evidencia minima de legibilidad y de consistencia con `docs/design-system.md`.
 - Existe una conclusion binaria: `pass`, `retry-needed` o `stop`.
 - `progress.md` deja la ultima evidencia de testing y el siguiente paso exacto.
 
@@ -62,8 +64,9 @@ Usar inmediatamente despues de `sdd-apply` y antes de `sdd-verify`.
    - adjudicacion o receipt.
 3. Ejecutar o guiar la validacion de journeys clave con Playwright CLI.
 4. Comprobar formularios y endpoints afectados por el slice.
-5. Dejar evidencia corta y accionable para el gate siguiente.
-6. Registrar el resultado en `progress.md`.
+5. Si hay UI, comprobar que evidencia fuerte, contexto auxiliar, decision y receipt se distinguen con claridad.
+6. Dejar evidencia corta y accionable para el gate siguiente.
+7. Registrar el resultado en `progress.md`.
 
 # Reglas de autonomia
 
@@ -72,6 +75,7 @@ Usar inmediatamente despues de `sdd-apply` y antes de `sdd-verify`.
 - Si la misma causa persiste, detener el avance y escalar con contexto.
 - No aprobar un slice por inspeccion visual solamente cuando el repo exige validacion de comportamiento.
 - El resultado del test no existe para el siguiente agente si no quedo persistido en `progress.md`.
+- Si hubo trabajo visual nuevo, no aprobar el gate si `accepted` y `finalized` se muestran como el mismo estado.
 
 # Rutas concretas del repo
 

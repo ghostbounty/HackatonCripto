@@ -8,9 +8,10 @@ Para trabajo actual, leer en este orden:
 
 1. `AGENTS.md`
 2. `docs/architecture.md`
-3. `docs/archive-boundary.md`
-4. `genlayer-mvp/README.md`
-5. `docs/testing-strategy.md`
+3. `docs/design-system.md` si el slice toca UI o evidencia visual
+4. `docs/archive-boundary.md`
+5. `genlayer-mvp/README.md`
+6. `docs/testing-strategy.md`
 
 ## Tesis operativa actual
 
@@ -49,13 +50,14 @@ Ese material puede consultarse, pero no define el MVP actual. La frontera exacta
 ## Flujo de trabajo recomendado
 
 1. Leer `AGENTS.md`, `docs/architecture.md` y `docs/archive-boundary.md`.
-2. Revisar `docs/product/` solo como contexto preservado.
-3. Crear o actualizar un unico `changes/<change-name>/`.
-4. Mantener `proposal/spec/design/tasks/progress/verify`.
-5. Implementar contra `genlayer-mvp/` o contra el framework activo, no contra el material archivado.
-6. Ejecutar `scripts/setup.sh` o `scripts/setup.ps1` si cambian skills.
-7. Ejecutar `scripts/validate-structure.sh` o `scripts/validate-structure.ps1`.
-8. Abrir un PR con un solo change principal.
+2. Leer `docs/design-system.md` cuando el slice toque frontend, layout o evidencia visual.
+3. Revisar `docs/product/` solo como contexto preservado.
+4. Crear o actualizar un unico `changes/<change-name>/`.
+5. Mantener `proposal/spec/design/tasks/progress/verify`.
+6. Implementar contra `genlayer-mvp/` o contra el framework activo, no contra el material archivado.
+7. Ejecutar `scripts/setup.sh` o `scripts/setup.ps1` si cambian skills.
+8. Ejecutar `scripts/validate-structure.sh` o `scripts/validate-structure.ps1`.
+9. Abrir un PR con un solo change principal.
 
 ## Estructura raiz esperada
 
@@ -86,6 +88,7 @@ pwsh ./scripts/validate-structure.ps1
 ## Lecturas relacionadas
 
 - Arquitectura activa: `docs/architecture.md`
+- Sistema de diseno operativo: `docs/design-system.md`
 - Frontera de archivo: `docs/archive-boundary.md`
 - Scaffold activo: `genlayer-mvp/README.md`
 - Instalacion y bootstrap: `docs/installation.md`

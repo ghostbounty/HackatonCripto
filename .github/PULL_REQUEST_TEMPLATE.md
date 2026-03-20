@@ -21,6 +21,7 @@
 - Formularios validados:
 - Endpoints validados:
 - Estados observados: `accepted` / `finalized` / `n/a`
+- Evidencia visual y alineacion con `docs/design-system.md`, si aplica:
 - Evidencia de `sdd-test`:
 - Estado reportado en `progress.md`:
 

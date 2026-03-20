@@ -10,6 +10,8 @@ Este repositorio separa tres capas con contratos distintos:
 
 La arquitectura busca que cualquier agente pueda retomar el repo sin confundir el material preservado con la direccion activa del MVP.
 
+Cuando un slice toque UI o evidencia visual, `docs/design-system.md` complementa esta arquitectura con el contrato visual de la superficie activa.
+
 ## Tesis operativa actual
 
 El framework existe para construir un MVP de adjudicacion inteligente y auditable sobre GenLayer.
@@ -111,6 +113,8 @@ Ese scaffold existe para que la siguiente implementacion parta de un contrato cl
 9. `sdd-verify`
 10. `decision-gate`
 11. `next-slice` o `stop`
+
+Para slices visuales, `sdd-design`, `sdd-apply`, `sdd-test` y `sdd-verify` deben consultar o hacer cumplir `docs/design-system.md`.
 
 ## Capa de testing y evidencia
 

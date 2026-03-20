@@ -15,6 +15,7 @@ Usar cuando el change necesite arquitectura, flujos tecnicos, integraciones, per
 
 - `spec.md`
 - `docs/architecture.md`
+- `docs/design-system.md` cuando el slice toque UI o evidencia visual
 - Restricciones tecnicas del repo
 
 # Outputs / artifacts
@@ -26,6 +27,7 @@ Usar cuando el change necesite arquitectura, flujos tecnicos, integraciones, per
 - Los componentes afectados y el flujo tecnico quedan definidos.
 - El diseno fija el perimetro pequeno de IA, la separacion entre off-chain y on-chain y la politica de fuentes permitidas.
 - El diseno contempla como se sembraran datos demo o se verificaran endpoints y formularios.
+- Si el slice toca UI, el diseno traduce `docs/design-system.md` a decisiones concretas de paleta, jerarquia, superficies y estados visibles.
 - Los tradeoffs y supuestos tecnicos estan documentados.
 - `sdd-tasks` puede particionar el trabajo en slices verificables.
 
@@ -45,11 +47,13 @@ Usar cuando el change necesite arquitectura, flujos tecnicos, integraciones, per
 3. Registrar decisiones pendientes y tradeoffs.
 4. Alinear el diseno con los artifacts existentes.
 5. Incorporar plan de testabilidad y seeds demo.
+6. Si el slice toca UI, registrar como la interfaz mostrara evidencia, decision, `accepted` y `finalized`.
 
 # Reglas de autonomia
 
 - Preferir soluciones que reduzcan incertidumbre de testing y verify.
 - No aprobar un diseno que deje al agente sin una forma razonable de validar avance.
+- No aprobar un diseno visual que contradiga `docs/design-system.md` cuando el slice toque UI.
 
 # Rutas concretas del repo
 

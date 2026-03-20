@@ -18,6 +18,7 @@ required_paths=(
   "docs/product"
   "docs/archive-boundary.md"
   "docs/architecture.md"
+  "docs/design-system.md"
   "docs/autonomous-vibecoding.md"
   "docs/testing-strategy.md"
   "docs/seed-fixtures.md"
@@ -79,8 +80,10 @@ done
 
 grep -q "genlayer-mvp/" README.md || { echo "README.md missing active baseline reference" >&2; exit 1; }
 grep -q "docs/archive-boundary.md" README.md || { echo "README.md missing archive boundary reference" >&2; exit 1; }
+grep -q "docs/design-system.md" README.md || { echo "README.md missing design-system reference" >&2; exit 1; }
 grep -q "genlayer-mvp/" AGENTS.md || { echo "AGENTS.md missing active baseline path" >&2; exit 1; }
 grep -q "legacy/marketplace-demo/" AGENTS.md || { echo "AGENTS.md missing archive path" >&2; exit 1; }
+grep -q "docs/design-system.md" AGENTS.md || { echo "AGENTS.md missing design-system reference" >&2; exit 1; }
 grep -q "accepted" AGENTS.md || { echo "AGENTS.md missing accepted state" >&2; exit 1; }
 grep -q "finalized" AGENTS.md || { echo "AGENTS.md missing finalized state" >&2; exit 1; }
 grep -q "Playwright CLI" AGENTS.md || { echo "AGENTS.md missing Playwright CLI strategy" >&2; exit 1; }
@@ -88,6 +91,10 @@ grep -q "No avanzar sin pruebas" AGENTS.md || { echo "AGENTS.md missing no-test 
 grep -q "progress.md" AGENTS.md || { echo "AGENTS.md missing progress.md contract" >&2; exit 1; }
 
 grep -q "GenLayerJS" docs/architecture.md || { echo "docs/architecture.md missing GenLayerJS" >&2; exit 1; }
+grep -q "docs/design-system.md" docs/architecture.md || { echo "docs/architecture.md missing design-system reference" >&2; exit 1; }
+grep -q "accepted" docs/design-system.md || { echo "docs/design-system.md missing accepted state" >&2; exit 1; }
+grep -q "finalized" docs/design-system.md || { echo "docs/design-system.md missing finalized state" >&2; exit 1; }
+grep -qi "evidencia" docs/design-system.md || { echo "docs/design-system.md missing evidence guidance" >&2; exit 1; }
 grep -qi "baseline activo" docs/archive-boundary.md || { echo "docs/archive-boundary.md missing active/archive framing" >&2; exit 1; }
 grep -q "APPROVED" docs/testing-strategy.md || { echo "docs/testing-strategy.md missing APPROVED scenario" >&2; exit 1; }
 grep -q "FINALIZED" docs/testing-strategy.md || { echo "docs/testing-strategy.md missing FINALIZED scenario" >&2; exit 1; }
@@ -96,6 +103,11 @@ grep -q "Avanzar solo por evidencia" docs/mvp-loop.md || { echo "docs/mvp-loop.m
 grep -qi "politica de evidencia vigente" docs/handoff-progress.md || { echo "docs/handoff-progress.md missing evidence handoff guidance" >&2; exit 1; }
 grep -q "progress.md" .github/PULL_REQUEST_TEMPLATE.md || { echo "PR template missing progress.md reference" >&2; exit 1; }
 grep -q "genlayer-mvp/" .github/PULL_REQUEST_TEMPLATE.md || { echo "PR template missing active surface reference" >&2; exit 1; }
+grep -q "docs/design-system.md" .github/PULL_REQUEST_TEMPLATE.md || { echo "PR template missing design-system reference" >&2; exit 1; }
+grep -q "docs/design-system.md" skills/sdd-design/SKILL.md || { echo "sdd-design missing design-system reference" >&2; exit 1; }
+grep -q "docs/design-system.md" skills/sdd-apply/SKILL.md || { echo "sdd-apply missing design-system reference" >&2; exit 1; }
+grep -q "docs/design-system.md" skills/sdd-test/SKILL.md || { echo "sdd-test missing design-system reference" >&2; exit 1; }
+grep -q "docs/design-system.md" skills/sdd-verify/SKILL.md || { echo "sdd-verify missing design-system reference" >&2; exit 1; }
 grep -q "sdd-test" .atl/skill-registry.md || { echo "Registry missing sdd-test" >&2; exit 1; }
 grep -q "Next" .atl/skill-registry.md || { echo "Registry missing expanded columns" >&2; exit 1; }
 grep -qi "archivado" legacy/marketplace-demo/README.md || { echo "Legacy archive missing archived notice" >&2; exit 1; }

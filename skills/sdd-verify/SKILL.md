@@ -15,6 +15,7 @@ Usar despues de `sdd-test` y antes de archivar o abrir PR.
 
 - Cambio aplicado
 - Evidencia de `sdd-test`
+- `docs/design-system.md` cuando el slice toque UI o evidencia visual
 - `scripts/validate-structure.sh`
 - `progress.md`
 - `verify-checklist.md` o `verify.md`
@@ -31,6 +32,7 @@ Usar despues de `sdd-test` y antes de archivar o abrir PR.
 - Las validaciones automaticas y estructurales fueron ejecutadas.
 - Existe evidencia suficiente de testing del slice.
 - Se valido consistencia entre AGENTS, docs, skills, scripts, registry y templates con el pivot.
+- Si hubo trabajo visual nuevo, la evidencia confirma consistencia con `docs/design-system.md`.
 - El repo, el change y el flujo operativo siguen alineados.
 - Hay una decision clara sobre si se puede avanzar al siguiente slice.
 - `progress.md` refleja el estado real mas reciente del change.
@@ -53,9 +55,10 @@ Usar despues de `sdd-test` y antes de archivar o abrir PR.
 1. Ejecutar validaciones automaticas.
 2. Revisar estructura y links criticos.
 3. Confirmar evidencia de seeds y testing.
-4. Completar o actualizar artifacts de verify.
-5. Emitir decision de gate para continuar o detenerse.
-6. Confirmar que `progress.md` deja el handoff persistente correcto.
+4. Si el slice toca UI, confirmar que la decision, la evidencia y el receipt siguen siendo visualmente auditables.
+5. Completar o actualizar artifacts de verify.
+6. Emitir decision de gate para continuar o detenerse.
+7. Confirmar que `progress.md` deja el handoff persistente correcto.
 
 # Reglas de autonomia
 
@@ -63,6 +66,7 @@ Usar despues de `sdd-test` y antes de archivar o abrir PR.
 - No avanzar al siguiente slice con fallas abiertas en el gate.
 - Si una falla se repite, detenerse con causa y proximo paso minimo seguro.
 - `verify` no puede aprobar si falta el handoff persistido.
+- Si hubo trabajo visual nuevo, `verify` no puede aprobar si la guia visual fue ignorada.
 
 # Rutas concretas del repo
 

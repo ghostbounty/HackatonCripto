@@ -39,6 +39,15 @@ El framework ya no vende como tesis central "financiamiento visible en testnet".
 - Tratar `legacy/marketplace-demo/` como archivo tecnico preservado, no como ruta activa del MVP.
 - Consultar `docs/archive-boundary.md` cuando exista duda sobre si una ruta es normativa o historica.
 
+## Contrato visual activo
+
+- Tratar `docs/design-system.md` como la guia visual normativa para todo slice que toque UI, layout, componentes o evidencia visual.
+- Mantener la identidad del framework como una UI neon editorial dark mode enfocada en adjudicacion auditable, no en dashboards genericos.
+- Hacer visible la separacion entre evidencia fuerte, contexto auxiliar, decision emitida y receipt.
+- Distinguir visualmente `accepted` de `finalized`; no colapsarlos en una sola etiqueta ni mostrar "resuelto" antes de tiempo.
+- No usar bordes solidos de `1px` como recurso principal de seccionamiento; preferir superficies tonales, espacio y acentos funcionales.
+- No volver obligatoria esta guia para slices puramente backend, scripts o docs sin UI.
+
 ## Lugar obligatorio de artifacts por change
 
 Cada cambio debe vivir en `changes/<change-name>/` y mantener, segun corresponda, los siguientes artifacts:
@@ -218,6 +227,7 @@ Si cualquiera de estos puntos falla, el agente debe volver a `sdd-apply`, `sdd-t
 ## Reglas operativas
 
 - Leer `README.md` y `docs/architecture.md` para entender el marco del repositorio.
+- Leer `docs/design-system.md` antes de proponer o implementar cambios visuales.
 - Leer `docs/archive-boundary.md` antes de reutilizar material legado.
 - Consultar `docs/product/` antes de proponer cambios funcionales.
 - Implementar trabajo nuevo contra `genlayer-mvp/` o contra docs activas, no contra `legacy/`.
