@@ -22,6 +22,7 @@ Usar al materializar artifacts o implementacion derivada del change.
 - Archivos modificados o creados
 - Referencias actualizadas
 - Slice listo para `sdd-test`
+- `progress.md` actualizado con cambios aplicados y handoff a test
 
 # Done criteria
 
@@ -29,6 +30,7 @@ Usar al materializar artifacts o implementacion derivada del change.
 - Los cambios mantienen enlaces entre docs, skills y changes.
 - El slice queda preparado para seeds, formularios y endpoints a validar.
 - Existe un hand-off claro hacia `sdd-test`.
+- `progress.md` refleja que cambio y que queda listo para probar.
 
 # Blocking criteria
 
@@ -45,12 +47,14 @@ Usar al materializar artifacts o implementacion derivada del change.
 2. Mantener enlaces entre docs, skills y changes.
 3. Regenerar artifacts auxiliares cuando corresponda.
 4. Preparar evidencia y contexto para testing.
+5. Actualizar `progress.md` antes de pasar a `sdd-test`.
 
 # Reglas de autonomia
 
 - No marcar un slice como terminado al finalizar la edicion.
 - Si el cambio no puede probarse inmediatamente, reducir el alcance del slice o detenerse.
 - Evitar refactors amplios que retrasen el siguiente gate.
+- No dejar cambios aplicados sin persistir el estado en `progress.md`.
 
 # Rutas concretas del repo
 

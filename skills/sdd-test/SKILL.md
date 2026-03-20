@@ -26,6 +26,7 @@ Usar inmediatamente despues de `sdd-apply` y antes de `sdd-verify`.
 - Estado de seeds demo usadas
 - Referencia a journeys, formularios y endpoints validados
 - Hand-off claro para `sdd-verify`
+- `progress.md` actualizado con resultado `pass`, `retry-needed` o `stop`
 
 # Done criteria
 
@@ -34,6 +35,7 @@ Usar inmediatamente despues de `sdd-apply` y antes de `sdd-verify`.
 - Se validaron formularios y endpoints del slice con Playwright CLI o con evidencia equivalente prevista por el repo.
 - Se registraron claramente resultados, fallas y supuestos.
 - Existe una conclusion binaria: `pass`, `retry-needed` o `stop`.
+- `progress.md` deja la ultima evidencia de testing y el siguiente paso exacto.
 
 # Blocking criteria
 
@@ -60,6 +62,7 @@ Usar inmediatamente despues de `sdd-apply` y antes de `sdd-verify`.
 3. Ejecutar o guiar la validacion de journeys clave con Playwright CLI.
 4. Comprobar formularios y endpoints afectados por el slice.
 5. Dejar evidencia corta y accionable para el gate siguiente.
+6. Registrar el resultado en `progress.md`.
 
 # Reglas de autonomia
 
@@ -67,6 +70,7 @@ Usar inmediatamente despues de `sdd-apply` y antes de `sdd-verify`.
 - Reintentar hasta 2 veces como maximo cuando la falla sea corregible y acotada.
 - Si la misma causa persiste, detener el avance y escalar con contexto.
 - No aprobar un slice por inspeccion visual solamente cuando el repo exige validacion de comportamiento.
+- El resultado del test no existe para el siguiente agente si no quedo persistido en `progress.md`.
 
 # Rutas concretas del repo
 

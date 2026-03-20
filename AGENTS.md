@@ -22,6 +22,7 @@ Cada cambio debe vivir en `changes/<change-name>/` y mantener, segun corresponda
 - `spec.md`
 - `design.md`
 - `tasks.md`
+- `progress.md`
 - `verify-checklist.md` o `verify.md`
 
 ## Flujo obligatorio por slice
@@ -47,6 +48,7 @@ Ninguna skill puede saltarse el gate anterior. `sdd-apply` no habilita avanzar p
 - Explorar antes de preguntar. El agente debe intentar resolver dudas con lectura del repo, docs, scripts, changes y configuraciones antes de escalar al usuario.
 - Preferir decisiones derivables del repo. Si una decision puede inferirse desde artifacts existentes, no se debe abrir una pregunta.
 - Registrar supuestos. Cuando falte contexto no critico, el agente debe dejar el supuesto por escrito en el artifact correspondiente o en la evidencia de verify.
+- Persistir el handoff. El agente debe actualizar `changes/<change-name>/progress.md` en cada checkpoint, antes de cualquier `stop`, `retry-needed` o cambio de slice.
 - Trabajar en slices pequenos. Cada iteracion debe producir un avance acotado, verificable y reversible.
 - No avanzar sin pruebas. Un slice no se considera terminado hasta pasar seeds demo, pruebas Playwright CLI y verificacion estructural.
 - Detenerse ante evidencia insuficiente. Si falla testing, verify o el contexto no permite una decision segura, el agente debe corregir o detenerse con evidencia breve y accionable.
@@ -60,6 +62,7 @@ Ninguna skill puede saltarse el gate anterior. `sdd-apply` no habilita avanzar p
   - que gate paso,
   - que gate fallo,
   - que sigue o por que se detiene.
+- Esa evidencia debe quedar persistida en `changes/<change-name>/progress.md`, no solo en mensajes o PRs.
 
 ## Politica de reintentos y escalacion
 
@@ -82,6 +85,7 @@ El gate entre slices solo puede aprobarse si se cumplen todos estos criterios:
 - Los cambios aplicados son minimos y trazables a un change.
 - Las seeds demo requeridas para formularios y endpoints fueron preparadas o verificadas.
 - Los journeys principales se validaron con Playwright CLI o con evidencia equivalente prevista por `sdd-test`.
+- `progress.md` refleja el estado real mas reciente del slice y el siguiente paso exacto para otro agente.
 - `sdd-verify` confirma consistencia del repo, del change y de los artifacts operativos.
 
 Si cualquiera de estos puntos falla, el agente debe volver a `sdd-apply`, `sdd-test` o detenerse.
@@ -97,6 +101,16 @@ Si cualquiera de estos puntos falla, el agente debe volver a `sdd-apply`, `sdd-t
   - merito,
   - sponsorship.
 - Las pruebas deben cubrir al menos formularios y endpoints relevantes del slice antes de habilitar el siguiente avance.
+- El resultado de cada checkpoint debe registrarse en `changes/<change-name>/progress.md` con:
+  - estado general,
+  - slice actual,
+  - ultimo gate aprobado,
+  - trabajo completado,
+  - trabajo pendiente inmediato,
+  - bloqueos activos,
+  - decisiones y supuestos vigentes,
+  - ultima evidencia de testing o verify,
+  - siguiente paso exacto para el siguiente agente.
 
 ## Skills disponibles en `skills/`
 
@@ -136,6 +150,7 @@ Si cualquiera de estos puntos falla, el agente debe volver a `sdd-apply`, `sdd-t
 - Usar `scripts/setup.sh` o `scripts/setup.ps1` para regenerar artifacts auxiliares.
 - Usar `scripts/validate-structure.sh` o `scripts/validate-structure.ps1` antes de abrir o actualizar un PR y despues de cambios relevantes al framework.
 - Guardar artifacts de Playwright bajo `output/playwright/` si se generan evidencias locales.
+- No cambiar de slice ni cerrar sesion operativa sin actualizar `progress.md`.
 
 ## Condiciones de stop
 

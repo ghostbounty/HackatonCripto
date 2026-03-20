@@ -18,7 +18,9 @@ $requiredPaths = @(
   'docs/autonomous-vibecoding.md',
   'docs/testing-strategy.md',
   'docs/seed-fixtures.md',
-  'docs/mvp-loop.md'
+  'docs/mvp-loop.md',
+  'docs/handoff-progress.md',
+  'docs/progress-template.md'
 )
 
 $requiredSkills = @(
@@ -54,13 +56,23 @@ $preservedArtifacts = @(
   'docs/product/domain-rules.md',
   'docs/product/blockchain-scope.md',
   'docs/product/demo-script.md',
+  'changes/multi-agent-collaboration-protocol/progress.md',
   'changes/traceable-volunteering-with-demo-crypto/proposal.md',
-  'changes/stretch-merit-reputation/proposal.md'
+  'changes/traceable-volunteering-with-demo-crypto/progress.md',
+  'changes/stretch-merit-reputation/proposal.md',
+  'changes/stretch-merit-reputation/progress.md'
 )
 
 foreach ($artifact in $preservedArtifacts) {
   if (-not (Test-Path $artifact)) {
     throw "Missing preserved artifact: $artifact"
+  }
+}
+
+Get-ChildItem changes -Directory | ForEach-Object {
+  $progressFile = Join-Path $_.FullName 'progress.md'
+  if (-not (Test-Path $progressFile)) {
+    throw "Missing progress artifact: $progressFile"
   }
 }
 
@@ -73,12 +85,15 @@ $checks = @(
   @{ Path = 'AGENTS.md'; Pattern = 'decision-gate'; Message = 'AGENTS.md missing decision-gate' },
   @{ Path = 'AGENTS.md'; Pattern = 'Playwright CLI'; Message = 'AGENTS.md missing Playwright CLI strategy' },
   @{ Path = 'AGENTS.md'; Pattern = 'No avanzar sin pruebas'; Message = 'AGENTS.md missing no-test gate policy' },
+  @{ Path = 'AGENTS.md'; Pattern = 'progress.md'; Message = 'AGENTS.md missing progress.md contract' },
   @{ Path = 'docs/architecture.md'; Pattern = 'sdd-test'; Message = 'docs/architecture.md missing sdd-test' },
   @{ Path = 'docs/testing-strategy.md'; Pattern = 'Playwright CLI'; Message = 'docs/testing-strategy.md missing Playwright CLI' },
   @{ Path = 'docs/seed-fixtures.md'; Pattern = 'proyecto publico'; Message = 'docs/seed-fixtures.md missing fixture definition' },
   @{ Path = 'docs/mvp-loop.md'; Pattern = 'Avanzar solo por evidencia'; Message = 'docs/mvp-loop.md missing evidence rule' },
+  @{ Path = 'docs/handoff-progress.md'; Pattern = 'progress.md'; Message = 'docs/handoff-progress.md missing progress.md guidance' },
   @{ Path = '.github/PULL_REQUEST_TEMPLATE.md'; Pattern = 'sdd-test'; Message = 'PR template missing sdd-test reference' },
   @{ Path = '.github/PULL_REQUEST_TEMPLATE.md'; Pattern = 'decision-gate'; Message = 'PR template missing decision-gate' },
+  @{ Path = '.github/PULL_REQUEST_TEMPLATE.md'; Pattern = 'progress.md'; Message = 'PR template missing progress.md reference' },
   @{ Path = '.atl/skill-registry.md'; Pattern = 'sdd-test'; Message = 'Registry missing sdd-test' },
   @{ Path = '.atl/skill-registry.md'; Pattern = 'Next'; Message = 'Registry missing expanded columns' }
 )

@@ -21,6 +21,8 @@ required_paths=(
   "docs/testing-strategy.md"
   "docs/seed-fixtures.md"
   "docs/mvp-loop.md"
+  "docs/handoff-progress.md"
+  "docs/progress-template.md"
 )
 
 required_skills=(
@@ -52,9 +54,17 @@ for preserved in \
   "docs/product/domain-rules.md" \
   "docs/product/blockchain-scope.md" \
   "docs/product/demo-script.md" \
+  "changes/multi-agent-collaboration-protocol/progress.md" \
   "changes/traceable-volunteering-with-demo-crypto/proposal.md" \
-  "changes/stretch-merit-reputation/proposal.md"; do
+  "changes/traceable-volunteering-with-demo-crypto/progress.md" \
+  "changes/stretch-merit-reputation/proposal.md" \
+  "changes/stretch-merit-reputation/progress.md"; do
   [[ -e "$preserved" ]] || { echo "Missing preserved artifact: $preserved" >&2; exit 1; }
+done
+
+for dir in changes/*; do
+  [ -d "$dir" ] || continue
+  [ -f "$dir/progress.md" ] || { echo "Missing progress artifact: $dir/progress.md" >&2; exit 1; }
 done
 
 [[ -f ".atl/skill-registry.md" ]] || { echo "Missing generated registry" >&2; exit 1; }
@@ -63,14 +73,17 @@ grep -q "sdd-test" AGENTS.md || { echo "AGENTS.md missing sdd-test" >&2; exit 1;
 grep -q "decision-gate" AGENTS.md || { echo "AGENTS.md missing decision-gate" >&2; exit 1; }
 grep -q "Playwright CLI" AGENTS.md || { echo "AGENTS.md missing Playwright CLI strategy" >&2; exit 1; }
 grep -q "No avanzar sin pruebas" AGENTS.md || { echo "AGENTS.md missing no-test gate policy" >&2; exit 1; }
+grep -q "progress.md" AGENTS.md || { echo "AGENTS.md missing progress.md contract" >&2; exit 1; }
 
 grep -q "sdd-test" docs/architecture.md || { echo "docs/architecture.md missing sdd-test" >&2; exit 1; }
 grep -q "Playwright CLI" docs/testing-strategy.md || { echo "docs/testing-strategy.md missing Playwright CLI" >&2; exit 1; }
 grep -q "proyecto publico" docs/seed-fixtures.md || { echo "docs/seed-fixtures.md missing fixture definition" >&2; exit 1; }
 grep -q "Avanzar solo por evidencia" docs/mvp-loop.md || { echo "docs/mvp-loop.md missing evidence rule" >&2; exit 1; }
+grep -q "progress.md" docs/handoff-progress.md || { echo "docs/handoff-progress.md missing progress.md guidance" >&2; exit 1; }
 
 grep -q "sdd-test" .github/PULL_REQUEST_TEMPLATE.md || { echo "PR template missing sdd-test reference" >&2; exit 1; }
 grep -q "decision-gate" .github/PULL_REQUEST_TEMPLATE.md || { echo "PR template missing decision-gate" >&2; exit 1; }
+grep -q "progress.md" .github/PULL_REQUEST_TEMPLATE.md || { echo "PR template missing progress.md reference" >&2; exit 1; }
 
 grep -q "sdd-test" .atl/skill-registry.md || { echo "Registry missing sdd-test" >&2; exit 1; }
 grep -q "Next" .atl/skill-registry.md || { echo "Registry missing expanded columns" >&2; exit 1; }

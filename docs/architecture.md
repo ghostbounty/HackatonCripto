@@ -35,6 +35,7 @@ La arquitectura busca permitir sesiones largas de vibecoding con alta autonomia,
 - `spec.md`
 - `design.md`
 - `tasks.md`
+- `progress.md`
 - `verify-checklist.md` o `verify.md`
 
 ### 3. Capa de skills
@@ -76,6 +77,7 @@ Entre slices existe una compuerta explicita. El agente solo puede continuar si:
 
 - el slice tiene criterio de aceptacion claro,
 - hay evidencia de seeds y testing,
+- `progress.md` refleja el estado vivo mas reciente,
 - la estructura sigue alineada,
 - no existen fallas repetidas sin resolver.
 

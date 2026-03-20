@@ -22,6 +22,7 @@ assignees: ''
 - Seed o fixture involucrada:
 - Formulario o endpoint afectado:
 - Evidencia de `sdd-test`:
+- Estado reportado en `progress.md`:
 
 ## Condicion de cierre
 

@@ -21,3 +21,4 @@ assignees: ''
 - Seeds demo necesarias:
 - Formularios o endpoints a validar:
 - Gate esperado antes de continuar:
+- Actualizacion esperada de `progress.md`:

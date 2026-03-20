@@ -22,6 +22,7 @@ assignees: ''
 - [ ] Formularios a validar
 - [ ] Endpoints a validar
 - [ ] Gate de verify definido
+- [ ] Estrategia de `progress.md` definida
 
 ## Artifacts esperados
 

@@ -24,6 +24,7 @@ El siguiente slice solo puede comenzar si:
 - el slice actual cumple su criterio de aceptacion,
 - el testing paso,
 - verify paso,
+- `progress.md` fue actualizado con el estado real mas reciente,
 - no hay bloqueos repetidos,
 - existe claridad suficiente para el siguiente paso.
 

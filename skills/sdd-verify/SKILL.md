@@ -16,6 +16,7 @@ Usar despues de `sdd-test` y antes de archivar o abrir PR.
 - Cambio aplicado
 - Evidencia de `sdd-test`
 - `scripts/validate-structure.sh`
+- `progress.md`
 - `verify-checklist.md` o `verify.md`
 
 # Outputs / artifacts
@@ -23,6 +24,7 @@ Usar despues de `sdd-test` y antes de archivar o abrir PR.
 - Evidencia de validacion
 - `verify-checklist.md` actualizado si aplica
 - Resultado del gate: `pass`, `retry-needed` o `stop`
+- `progress.md` confirmado y actualizado antes del gate
 
 # Done criteria
 
@@ -30,10 +32,12 @@ Usar despues de `sdd-test` y antes de archivar o abrir PR.
 - Existe evidencia suficiente de testing del slice.
 - El repo, el change y el flujo operativo siguen alineados.
 - Hay una decision clara sobre si se puede avanzar al siguiente slice.
+- `progress.md` refleja el estado real mas reciente del change.
 
 # Blocking criteria
 
 - Faltan validaciones estructurales o evidencia de testing.
+- Falta `progress.md` o su estado no coincide con el slice real.
 - El repo queda inconsistente con `AGENTS.md`, `docs/` o el registry.
 - Persisten fallas despues de 2 reintentos dirigidos.
 
@@ -50,12 +54,14 @@ Usar despues de `sdd-test` y antes de archivar o abrir PR.
 3. Confirmar evidencia de seeds y testing.
 4. Completar o actualizar artifacts de verify.
 5. Emitir decision de gate para continuar o detenerse.
+6. Confirmar que `progress.md` deja el handoff persistente correcto.
 
 # Reglas de autonomia
 
 - `verify` no es una formalidad. Si no hay evidencia, el resultado no puede ser `pass`.
 - No avanzar al siguiente slice con fallas abiertas en el gate.
 - Si una falla se repite, detenerse con causa y proximo paso minimo seguro.
+- `verify` no puede aprobar si falta el handoff persistido.
 
 # Rutas concretas del repo
 

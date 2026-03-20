@@ -11,6 +11,7 @@ El agente debe:
 - explorar antes de preguntar,
 - trabajar por slices pequenos,
 - registrar supuestos cuando el repo no resuelva un detalle menor,
+- persistir el estado vivo del change en `changes/<change-name>/progress.md`,
 - validar con frecuencia,
 - detener el avance cuando falle un gate.
 
@@ -32,6 +33,7 @@ Cada iteracion sigue este patron:
 - Correr checkpoints despues de cada cambio relevante.
 - No esperar al final de una sesion larga para validar.
 - Dejar evidencia corta sobre el estado del gate.
+- Actualizar `progress.md` en cada checkpoint para que otro agente pueda retomar sin historial de chat.
 
 ## Reintentos
 
@@ -50,3 +52,4 @@ Escalar solo si:
 ## Resultado esperado
 
 El agente no solo implementa; tambien sabe cuando no debe seguir. Ese comportamiento es parte del MVP del framework.
+Tambien debe dejar un handoff legible y persistente para la siguiente sesion.

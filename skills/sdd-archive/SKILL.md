@@ -21,12 +21,14 @@ Usar al final del ciclo de vida del change o al consolidar cambios fusionados.
 
 - Resumen o marca de cierre del change
 - Continuidad documentada para sesiones futuras
+- `progress.md` dejado en estado final o transferible
 
 # Done criteria
 
 - El change esta verificado y su estado final queda claro.
 - Se registran resultados, limites y referencias de continuidad.
 - Otra sesion autonoma puede retomar el contexto sin reconstruccion manual amplia.
+- `progress.md` indica con claridad si el change queda cerrado o listo para retomar.
 
 # Blocking criteria
 
@@ -43,11 +45,13 @@ Usar al final del ciclo de vida del change o al consolidar cambios fusionados.
 2. Resumir resultados y decisiones finales.
 3. Documentar referencias cruzadas utiles.
 4. Dejar claro si el siguiente paso es cerrar, retomar o abrir otro slice.
+5. Cerrar o transferir `progress.md` con el estado final correspondiente.
 
 # Reglas de autonomia
 
 - No archivar trabajo con gates fallidos.
 - El resumen final debe permitir continuidad sin supervision humana prolongada.
+- El cierre del change no esta completo si `progress.md` quedo desactualizado.
 
 # Rutas concretas del repo
 

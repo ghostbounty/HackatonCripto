@@ -21,12 +21,14 @@ Usar tras cerrar proposal, spec y design o cuando el checklist necesite mantenim
 # Outputs / artifacts
 
 - `changes/<change-name>/tasks.md`
+- `changes/<change-name>/progress.md` preparado para el primer slice
 
 # Done criteria
 
 - El trabajo esta partido en slices pequenos.
 - Cada slice tiene criterio de aceptacion.
 - Cada slice declara testing, seeds y verify asociados.
+- Cada slice puede reportarse de forma clara en `progress.md`.
 - El orden de ejecucion respeta el loop autonomo.
 
 # Blocking criteria
@@ -48,12 +50,14 @@ Usar tras cerrar proposal, spec y design o cuando el checklist necesite mantenim
    - seeds demo necesarias,
    - pruebas esperadas,
    - gate para continuar.
+5. Alinear `progress.md` con el primer slice y con el formato de handoff persistente.
 
 # Reglas de autonomia
 
 - No producir listas enormes sin prioridad.
 - Cada slice debe poder completarse, probarse y verificarse en una iteracion corta.
 - Si no se puede probar un slice por separado, dividirlo de nuevo.
+- `tasks.md` planea el trabajo; `progress.md` registra su estado vivo.
 
 # Rutas concretas del repo
 

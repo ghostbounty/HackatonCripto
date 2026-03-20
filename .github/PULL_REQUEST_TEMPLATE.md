@@ -17,6 +17,7 @@
 - Formularios validados:
 - Endpoints validados:
 - Evidencia de `sdd-test`:
+- Estado reportado en `progress.md`:
 
 ## Checklist
 
@@ -28,6 +29,7 @@
 - [ ] Se ejecuto `scripts/validate-structure.sh` o `scripts/validate-structure.ps1`.
 - [ ] `sdd-test` paso o se documenta claramente por que el agente se detuvo.
 - [ ] `sdd-verify` paso o se documenta claramente por que el agente se detuvo.
+- [ ] `progress.md` refleja el estado real mas reciente del change.
 
 ## Stop or Escalation
 
