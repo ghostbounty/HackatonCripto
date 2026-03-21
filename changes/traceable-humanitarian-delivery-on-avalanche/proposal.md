@@ -2,7 +2,7 @@
 
 ## Contexto
 
-En escenarios de desastre natural, el problema no es solo mover ayuda, sino demostrar que realmente llego a la ultima milla sin desvio, corrupcion o perdida operativa. El valor del MVP no esta en coordinar voluntariado de forma general, sino en cerrar esta secuencia:
+En escenarios de desastre natural, el problema no es solo mover ayuda, sino demostrar que realmente llego a la ultima milla sin desvio, corrupcion o perdida operativa. El valor del MVP de `Proof of Hand` no esta en coordinar voluntariado de forma general, sino en cerrar esta secuencia:
 
 1. evento fisico de entrega verificado,
 2. prueba registrada,
@@ -10,7 +10,7 @@ En escenarios de desastre natural, el problema no es solo mover ayuda, sino demo
 
 ## Objetivo del change
 
-Construir un MVP de hackathon donde:
+Construir el MVP de hackathon de `Proof of Hand`, donde:
 
 - un sponsor bloquea fondos en un contrato escrow sobre Avalanche C-Chain,
 - la operacion de campo registra una entrega de lote con QR + geolocalizacion + timestamp,

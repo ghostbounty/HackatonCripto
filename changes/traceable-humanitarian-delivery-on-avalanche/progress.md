@@ -3,7 +3,7 @@
 ## Estado general
 
 - Estado: `ready-for-next-slice`
-- Resumen breve: framework alineado al dominio vigente, con contrato visual y operativo base ya incorporado; docs, skills, scripts y artifacts del change quedaron consistentes y la validacion estructural paso en PowerShell y shell.
+- Resumen breve: framework alineado al dominio vigente de `Proof of Hand`, con contrato visual y operativo base ya incorporado; docs, skills, scripts y artifacts del change quedaron consistentes y la validacion estructural paso en PowerShell y shell.
 
 ## Slice actual
 

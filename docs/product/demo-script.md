@@ -4,7 +4,7 @@ Este guion sugiere como presentar la demo de 2 a 3 minutos ante el jurado del ha
 
 ## Introduccion y contexto
 
-Explica brevemente que el producto resuelve un problema especifico de ayuda humanitaria: demostrar que la ayuda llego a la ultima milla y vincular esa evidencia a la liberacion de fondos.
+Explica brevemente que `Proof of Hand` resuelve un problema especifico de ayuda humanitaria: demostrar que la ayuda llego a la ultima milla y vincular esa evidencia a la liberacion de fondos.
 
 ## Paso 1: funding de campaign
 

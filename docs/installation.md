@@ -40,6 +40,6 @@
 1. Ejecutar instalacion.
 2. Ejecutar setup.
 3. Validar estructura.
-4. Leer `AGENTS.md`, `README.md` y `docs/architecture.md`.
+4. Leer `AGENTS.md`, `README.md` y `docs/architecture.md` para entender el marco de Proof of Hand.
 5. Revisar `docs/product/` antes de abrir o retomar un change.
 6. Si el trabajo es del MVP vigente, comenzar por `changes/traceable-humanitarian-delivery-on-avalanche/`.

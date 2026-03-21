@@ -1,6 +1,6 @@
 # Vision para el hackathon
 
-Nuestro hackathon de 24 horas tiene como objetivo demostrar una version end-to-end de entrega humanitaria trazable sobre Avalanche C-Chain. La plataforma no busca coordinar voluntariado de forma general ni construir una infraestructura blockchain maximalista; su propuesta es cerrar una secuencia simple y defendible:
+Nuestro hackathon de 24 horas tiene como objetivo demostrar una version end-to-end de entrega humanitaria trazable sobre Avalanche C-Chain. La plataforma se llama `Proof of Hand` y no busca coordinar voluntariado de forma general ni construir una infraestructura blockchain maximalista; su propuesta es cerrar una secuencia simple y defendible:
 
 1. un sponsor bloquea fondos para una campana,
 2. la operacion de campo registra la entrega fisica de un lote,
@@ -51,4 +51,4 @@ Se excluyen:
 
 ## Resultado esperado
 
-Al final del hackathon presentaremos una aplicacion funcional donde un sponsor bloquea fondos, un operador registra desde refugio la entrega de un lote y, al sincronizar la evidencia, el sistema libera el pago del hito al actor correspondiente. La demo debe sentirse pragmatica, creible y ejecutable por un equipo pequeno en tiempo limitado.
+Al final del hackathon presentaremos una aplicacion funcional de `Proof of Hand` donde un sponsor bloquea fondos, un operador registra desde refugio la entrega de un lote y, al sincronizar la evidencia, el sistema libera el pago del hito al actor correspondiente. La demo debe sentirse pragmatica, creible y ejecutable por un equipo pequeno en tiempo limitado.

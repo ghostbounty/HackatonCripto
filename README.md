@@ -1,6 +1,6 @@
-# HackatonCripto
+# Proof of Hand
 
-Repositorio base para trabajar cambios orientados a especificacion (`changes/`) sobre el dominio funcional del hackathon documentado en `docs/product/`.
+Repositorio base de Proof of Hand para trabajar cambios orientados a especificacion (`changes/`) sobre el dominio funcional del hackathon documentado en `docs/product/`.
 
 El repo tambien mantiene un contrato visual transversal en `DESIGN.md` para slices con UI, PWA, formularios, layout o frontend.
 
@@ -17,6 +17,8 @@ El repo tambien mantiene un contrato visual transversal en `DESIGN.md` para slic
 ## Dominio vigente
 
 El repo esta alineado al MVP `traceable-humanitarian-delivery-on-avalanche`.
+
+La plataforma se presenta con el nombre `Proof of Hand`.
 
 La tesis del producto es demostrar esta secuencia en una demo de hackathon:
 

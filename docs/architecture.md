@@ -10,6 +10,8 @@ Este repositorio combina tres capas que deben convivir sin interferirse:
 
 La arquitectura busca permitir sesiones largas de vibecoding con alta autonomia, sin perder el foco del hackathon: demostrar trazabilidad de entrega humanitaria y liberacion programable de fondos por hitos.
 
+El nombre visible de la plataforma documentada por este framework es `Proof of Hand`.
+
 ## Principios de operacion
 
 - El agente trabaja por slices pequenos y verificables.
@@ -107,6 +109,7 @@ Si el gate falla, el agente corrige el slice actual o se detiene con contexto ac
 
 La arquitectura del producto que este framework documenta es:
 
+- `Proof of Hand`: nombre visible de la plataforma y de la demo,
 - `Sponsor UI`: inicia campanas y bloquea fondos.
 - `Field PWA`: registra QR, geolocalizacion y timestamp con soporte offline-first.
 - `Backend verificador`: consolida eventos, deduplica y decide si un hito esta cumplido.
