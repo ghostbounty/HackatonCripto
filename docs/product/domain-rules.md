@@ -1,46 +1,81 @@
-# Reglas de dominio para el hackathon
+# Reglas del dominio
 
-Este documento resume las reglas más relevantes del dominio para la demo del hackathon. Está basado en el Domain Spec del PRD original y ha sido simplificado para enfocarse en transparencia operativa, trazabilidad y reconocimiento peer-to-peer. Donde sea relevante, se integra la práctica Merit Money de Management 3.0.
+## Objetivo del dominio
 
-## Entidades mínimas
+El sistema busca demostrar que la ayuda humanitaria puede seguir una secuencia verificable desde la custodia de fondos hasta la entrega fisica y la liberacion de pagos por hitos.
 
-| Entidad | Propósito |
-| --- | --- |
-| Usuario | Representa a un voluntario, sponsor o project owner con alias, bio y wallet |
-| Organización | Agrupa proyectos y define la identidad pública de la iniciativa |
-| Proyecto | Iniciativa concreta con descripción, causa(s) y meta de sponsorship |
-| Tarea | Unidad de trabajo dentro de un proyecto; avanza entre estados kanban |
-| Votación | Sesión de votación para aprobar/rechazar el cierre de una tarea |
-| Mérito | Puntos asignados peer-to-peer después de aprobar una tarea |
-| Sponsorship | Registro de un aporte en cripto al proyecto con `tx_hash` y estado |
-| Evento | Entrada append-only en el historial que registra una acción relevante |
+## Actores
 
-## Relaciones clave
+- `Sponsor`: deposita fondos y espera evidencia verificable.
+- `ONG ejecutora`: coordina campanas, lotes y operacion.
+- `Operator`: registra entregas en campo.
+- `Provider`: puede recibir parte del payout al cumplirse un milestone.
+- `Backend verificador`: consolida evidencia y dispara la liberacion on-chain.
 
-- Una organización publica proyectos, y cada proyecto pertenece a una sola organización.
-- Los usuarios pueden unirse a proyectos como voluntarios o sponsors. Un usuario puede participar en múltiples proyectos.
-- Cada tarea pertenece exactamente a un proyecto y genera un historial de eventos.
-- Una tarea puede tener una votación de cierre; sólo los participantes elegibles pueden votar y asignar mérito.
-- Los sponsors financian proyectos; su aporte se registra con el monto, el token y el hash de transacción en la red de prueba.
-- El mérito se asigna entre usuarios después de que la tarea ha sido aprobada, y la cantidad de puntos otorgados proviene del saldo de monedas virtuales de quien otorga.
+## Entidades principales
 
-## Estados simplificados
+### Campaign
 
-| Entidad | Estados |
-| --- | --- |
-| Proyecto | `draft`, `published`, `active`, `completed` |
-| Tarea | `todo`, `doing`, `done` |
-| Votación | `open`, `approved`, `rejected` |
-| Sponsorship | `pending`, `confirmed`, `failed` |
+- representa una campana humanitaria financiada,
+- debe tener sponsor wallet,
+- debe tener estado y monto total.
 
-## Reglas de negocio
+### Milestone
 
-- Transparencia y visibilidad: todos los proyectos en la demo son públicos; los visitantes pueden ver sus tareas, historia y sponsors. El historial de eventos es append-only y no se edita silenciosamente.
-- Creación y asociación: un proyecto debe tener al menos una causa y pertenecer a una organización. Cada tarea pertenece a un único proyecto.
-- Kanban simple: las tareas pasan por `todo` -> `doing` -> `done`. Cada cambio de estado genera un evento auditable.
-- Cierre por votación: cuando se propone el cierre de una tarea, se abre una votación. Los participantes elegibles votan y, si se cumple la regla configurada (p. ej., mayoría simple), la tarea queda aprobada o rechazada. En la demo se implementa una regla simple configurable.
-- Merit Money: al aprobar la tarea, se activa un período corto en el que los participantes pueden asignar mérito a sus pares usando monedas virtuales. Cada participante dispone de un saldo limitado de monedas y decide a quién reconoce; los puntos asignados se registran de forma pública. Este esquema de recompensa peer-to-peer fomenta gratitud y equidad.
-- Sponsorship en cripto: cualquier usuario puede actuar como sponsor conectando su wallet y enviando un aporte en la red de desarrollo. El backend registra `amount`, `token_symbol`, `network` y `tx_hash`; la interfaz muestra los sponsors y enlaza al explorador de bloques.
-- Reputación básica (stretch): la reputación se calcula a partir de tareas aprobadas, mérito recibido y participación en votaciones. Esta característica se planifica como extensión y no es obligatoria para la demo.
+- representa una condicion de liberacion,
+- pertenece a una campaign,
+- define payout rules y estado.
 
-Estas reglas sirven como base para las decisiones de diseño y la implementación de la demo. Cualquier regla no incluida aquí se asume fuera de alcance para el hackathon.
+### DeliveryLot
+
+- representa una unidad logistica trazable,
+- debe tener QR unico,
+- debe pertenecer a una campaign.
+
+### DeliveryEvent
+
+- representa la prueba capturada en campo,
+- debe incluir `lot_id`, `operator_id`, GPS y timestamp,
+- puede incluir identidad minima opcional del receptor,
+- debe registrar `device_nonce`, `local_hash`, `previous_hash` y `sync_status`.
+
+### PayoutRule
+
+- define quienes reciben fondos al cumplirse un milestone,
+- la suma de porcentajes debe cubrir el total del milestone.
+
+### PayoutExecution
+
+- registra la ejecucion on-chain del hito,
+- debe guardar `tx_hash`, monto, fecha y snapshot de destinatarios.
+
+## Reglas funcionales
+
+- RF-01: el sponsor debe poder bloquear fondos para una campaign.
+- RF-02: el sistema debe permitir definir multiples milestones por campaign.
+- RF-03: cada milestone debe poder distribuir fondos a multiples actores.
+- RF-04: el operador debe poder registrar una entrega mediante QR.
+- RF-05: el sistema debe capturar GPS y timestamp del evento.
+- RF-06: la identidad del beneficiario sera opcional y minima.
+- RF-07: la app debe funcionar sin conectividad temporal.
+- RF-08: los eventos offline deben sincronizarse luego sin perder orden logico.
+- RF-09: el backend debe prevenir duplicacion de eventos por lote.
+- RF-10: el contrato debe impedir liberar dos veces el mismo milestone.
+
+## Reglas de offline-first
+
+- la PWA debe permitir registrar entregas sin internet,
+- cada evento se guarda en IndexedDB,
+- cada evento mantiene integridad secuencial con `previous_hash` y `local_hash`,
+- al sincronizar, el backend valida formato, pertenencia y duplicados.
+
+## Reglas de payout
+
+- el payout ocurre por milestone, no por unidad individual,
+- el release se dispara solo despues de consolidar evidencia suficiente,
+- la evidencia completa queda off-chain,
+- on-chain solo vive un digest resumido de la prueba.
+
+## Regla de demo
+
+La demo debe poder completarse en menos de 3 minutos y cubrir funding, captura offline, sync y release sin depender de infraestructura fuera de alcance del hackathon.

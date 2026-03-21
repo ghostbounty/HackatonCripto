@@ -27,11 +27,19 @@ foreach ($dir in $dirs) {
 }
 
 Write-Host "Bootstrap complete in $Root"
-Write-Host "Optional tooling status:"
+Write-Host 'Optional tooling status for the hackathon stack:'
 $status | Format-Table -AutoSize | Out-String | Write-Host
 
 if (-not (Test-Command 'npx')) {
   Write-Warning 'Playwright CLI requires npx. Install Node.js/npm before relying on autonomous testing gates.'
 } else {
-  Write-Host 'npx detected. Playwright CLI wrapper workflows are available to the autonomous testing strategy.'
+  Write-Host 'npx detected. Playwright CLI workflows are available to the autonomous testing strategy.'
+}
+
+if (-not (Test-Command 'node')) {
+  Write-Warning 'Hardhat and the Avalanche C-Chain demo tooling require Node.js.'
+}
+
+if ((-not (Test-Command 'python')) -and (-not (Test-Command 'python3'))) {
+  Write-Warning 'Python is recommended for backend scripts, fixture helpers and validator utilities.'
 }

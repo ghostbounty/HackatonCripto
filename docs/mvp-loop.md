@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Definir como el agente decide avanzar al siguiente slice o detenerse.
+Definir como el agente decide avanzar al siguiente slice o detenerse dentro del MVP `traceable-humanitarian-delivery-on-avalanche`.
 
 ## Flujo
 
@@ -33,6 +33,18 @@ El siguiente slice solo puede comenzar si:
 - `continue`: el gate aprueba y puede empezar el siguiente slice.
 - `retry-current-slice`: hay una falla corregible dentro del mismo slice.
 - `stop-and-escalate`: el agente debe detenerse y resumir contexto.
+
+## Relacion con el dominio
+
+El loop del MVP existe para proteger una demo creible. El orden ideal de slices es:
+
+1. escrow y funding,
+2. modelo de hitos y payout rules,
+3. captura de entrega,
+4. cola offline y sync,
+5. consolidacion en backend,
+6. release de milestone,
+7. demo end-to-end.
 
 ## Regla de oro
 

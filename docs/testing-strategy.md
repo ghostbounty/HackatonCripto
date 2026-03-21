@@ -19,6 +19,16 @@ Cada slice debe validar, segun aplique:
 - journey principal de usuario ligado al slice,
 - evidencia breve de resultado.
 
+## Journeys minimos del MVP vigente
+
+- sponsor crea o financia una campaign en escrow,
+- operador registra entrega con QR + GPS + timestamp,
+- el sistema soporta captura offline antes de sincronizar,
+- la entrega puede guardarse sin conectividad,
+- los eventos pendientes se sincronizan,
+- el backend consolida el hito,
+- el contrato libera el payout segun reglas.
+
 ## Evidencia minima
 
 El resultado de testing debe poder clasificarse como:
@@ -30,7 +40,7 @@ El resultado de testing debe poder clasificarse como:
 La evidencia debe indicar:
 
 - que seeds demo se usaron,
-- que journey se probó,
+- que journey se probo,
 - que formulario o endpoint se valido,
 - que fallo o paso.
 
@@ -43,3 +53,4 @@ La evidencia debe indicar:
 - Guardar artifacts locales en `output/playwright/` cuando haga falta.
 - Repetir pruebas pequenas y dirigidas despues de cada cambio relevante.
 - No sustituir pruebas por inspeccion superficial del codigo.
+- Priorizar la prueba del flujo demo antes que coberturas accesorias.

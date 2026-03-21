@@ -1,6 +1,6 @@
 ---
 name: sdd-explore
-description: Explorar el contexto funcional y tecnico existente antes de proponer cambios. Usar cuando sea necesario leer docs/product, changes vigentes y documentacion marco para comprender alcance, restricciones e impacto.
+description: Explorar el contexto funcional y tecnico existente antes de proponer cambios sobre campaigns, delivery lots, milestones, offline sync y payouts.
 ---
 
 # Proposito
@@ -28,7 +28,7 @@ Usar al inicio de un change o antes de ajustar proposal, spec, design o tasks.
 # Done criteria
 
 - Se leyeron los artifacts funcionales obligatorios del dominio.
-- Se identificaron cambios relacionados y restricciones operativas.
+- Se identificaron changes relacionados y restricciones operativas.
 - Se documentaron riesgos, dependencias y supuestos relevantes.
 - El agente puede proponer sin preguntas evitables.
 

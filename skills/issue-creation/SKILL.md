@@ -1,6 +1,6 @@
 ---
 name: issue-creation
-description: Convertir un change o una parte de sus tasks en issues trazables para seguimiento. Usar cuando se necesite descomponer trabajo en tickets que referencien changes, docs/product y criterios de verificacion.
+description: Convertir un change o una parte de sus tasks en issues trazables para seguimiento del MVP de entrega humanitaria trazable.
 ---
 
 # Proposito

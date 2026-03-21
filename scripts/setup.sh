@@ -25,6 +25,8 @@ def clean(value: str) -> str:
 
 entries = []
 for skill_md in sorted(skills_dir.glob('*/SKILL.md')):
+    if skill_md.parent.name == '_shared':
+        continue
     text = skill_md.read_text(encoding='utf-8')
     name_match = re.search(r'^name:\s*(.+)$', text, re.M)
     desc_match = re.search(r'^description:\s*(.+)$', text, re.M)

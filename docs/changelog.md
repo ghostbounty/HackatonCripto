@@ -1,8 +1,8 @@
 # Changelog del framework
 
-## 2026-03-19
+## 2026-03-20
 
-- Se agregó la capa de framework alignment del repositorio.
-- Se incorporaron archivos raíz `AGENTS.md`, `README.md` y `CONTRIBUTING.md`.
-- Se creó la estructura `skills/`, `scripts/`, `examples/`, `.atl/` y `.github/`.
-- Se preservó el contenido existente de `docs/product/` y `changes/`.
+- Se realineo el framework al dominio `traceable-humanitarian-delivery-on-avalanche`.
+- `docs/product/` paso a describir entrega humanitaria trazable, escrow por hitos y Avalanche C-Chain.
+- Se actualizo `AGENTS.md`, `docs/`, `skills/`, `scripts/`, `.atl/skill-registry.md` y `.github/` para reflejar el nuevo MVP.
+- Se agrego el change `changes/traceable-humanitarian-delivery-on-avalanche/`.

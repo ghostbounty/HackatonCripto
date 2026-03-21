@@ -1,6 +1,6 @@
 ---
 name: sdd-archive
-description: Cerrar o archivar un change una vez verificado y fusionado. Usar cuando sea necesario documentar el estado final, referencias del PR y cualquier transicion del change activo hacia un estado historico.
+description: Cerrar o archivar un change una vez verificado y fusionado, dejando continuidad documental suficiente para retomar o auditar.
 ---
 
 # Proposito

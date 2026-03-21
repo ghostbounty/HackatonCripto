@@ -1,6 +1,6 @@
 ---
 name: sdd-propose
-description: Redactar o ajustar la propuesta de un change en changes/<change-name>/proposal.md. Usar cuando se necesite definir intencion, problema, alcance, riesgos, rollback y criterios iniciales del cambio.
+description: Redactar o ajustar la propuesta de un change para `traceable-humanitarian-delivery-on-avalanche`, con foco en valor de demo, alcance y riesgos.
 ---
 
 # Proposito

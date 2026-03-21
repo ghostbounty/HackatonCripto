@@ -2,6 +2,7 @@
 
 - Change principal:
 - Slice o fase del MVP:
+- Hito o flujo del dominio:
 - Alcance del PR:
 - Artifacts afectados:
 
@@ -14,6 +15,7 @@
 ## Testing
 
 - Seeds demo usadas:
+- Journeys validados:
 - Formularios validados:
 - Endpoints validados:
 - Evidencia de `sdd-test`:
@@ -22,8 +24,8 @@
 ## Checklist
 
 - [ ] El PR mantiene un solo change principal.
-- [ ] `docs/product/` permanece intacto.
-- [ ] `changes/` existentes permanecen intactos.
+- [ ] `docs/product/` refleja el dominio vigente.
+- [ ] `changes/` historicos permanecen intactos.
 - [ ] Se ejecuto `scripts/install.sh` o `scripts/install.ps1` si se validaron prerequisitos del entorno.
 - [ ] Se ejecuto `scripts/setup.sh` o `scripts/setup.ps1` si cambio `skills/`.
 - [ ] Se ejecuto `scripts/validate-structure.sh` o `scripts/validate-structure.ps1`.

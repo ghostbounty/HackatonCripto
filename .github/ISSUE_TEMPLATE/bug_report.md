@@ -17,10 +17,18 @@ assignees: ''
 
 ## Comportamiento esperado
 
+## Impacto en el flujo demo
+
+- [ ] Funding
+- [ ] Captura offline
+- [ ] Sync posterior
+- [ ] Consolidacion de hito
+- [ ] Release programable
+
 ## Testing impactado
 
 - Seed o fixture involucrada:
-- Formulario o endpoint afectado:
+- Journey, formulario o endpoint afectado:
 - Evidencia de `sdd-test`:
 - Estado reportado en `progress.md`:
 

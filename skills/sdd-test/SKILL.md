@@ -1,6 +1,6 @@
 ---
 name: sdd-test
-description: Preparar entorno, seeds demo y pruebas Playwright CLI para validar formularios, endpoints y journeys del slice activo. Usar cuando un slice ya fue aplicado y deba demostrar evidencia de pass o fail antes de `sdd-verify`.
+description: Preparar entorno, seeds demo y pruebas Playwright CLI para validar funding, captura offline, sync y release del slice activo.
 ---
 
 # Proposito
@@ -31,7 +31,7 @@ Usar inmediatamente despues de `sdd-apply` y antes de `sdd-verify`.
 # Done criteria
 
 - El entorno minimo de testing fue comprobado.
-- Las seeds demo del marketplace relevantes al slice existen, se prepararon o se verificaron.
+- Las seeds demo relevantes al slice existen, se prepararon o se verificaron.
 - Se validaron formularios y endpoints del slice con Playwright CLI o con evidencia equivalente prevista por el repo.
 - Se registraron claramente resultados, fallas y supuestos.
 - Existe una conclusion binaria: `pass`, `retry-needed` o `stop`.
@@ -53,12 +53,14 @@ Usar inmediatamente despues de `sdd-apply` y antes de `sdd-verify`.
 # Pasos esperados
 
 1. Confirmar prerequisitos del entorno autonomo.
-2. Preparar o verificar las seeds demo del marketplace:
-   - proyecto,
-   - voluntario,
-   - tarea,
-   - merito,
-   - sponsorship.
+2. Preparar o verificar las seeds demo del dominio vigente:
+   - sponsor,
+   - campaign,
+   - milestone,
+   - delivery lot,
+   - operator,
+   - delivery event,
+   - payout execution.
 3. Ejecutar o guiar la validacion de journeys clave con Playwright CLI.
 4. Comprobar formularios y endpoints afectados por el slice.
 5. Dejar evidencia corta y accionable para el gate siguiente.

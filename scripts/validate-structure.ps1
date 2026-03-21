@@ -20,7 +20,8 @@ $requiredPaths = @(
   'docs/seed-fixtures.md',
   'docs/mvp-loop.md',
   'docs/handoff-progress.md',
-  'docs/progress-template.md'
+  'docs/progress-template.md',
+  'changes/traceable-humanitarian-delivery-on-avalanche'
 )
 
 $requiredSkills = @(
@@ -60,7 +61,9 @@ $preservedArtifacts = @(
   'changes/traceable-volunteering-with-demo-crypto/proposal.md',
   'changes/traceable-volunteering-with-demo-crypto/progress.md',
   'changes/stretch-merit-reputation/proposal.md',
-  'changes/stretch-merit-reputation/progress.md'
+  'changes/stretch-merit-reputation/progress.md',
+  'changes/traceable-humanitarian-delivery-on-avalanche/proposal.md',
+  'changes/traceable-humanitarian-delivery-on-avalanche/progress.md'
 )
 
 foreach ($artifact in $preservedArtifacts) {
@@ -81,21 +84,26 @@ if (-not (Test-Path '.atl/skill-registry.md')) {
 }
 
 $checks = @(
-  @{ Path = 'AGENTS.md'; Pattern = 'sdd-test'; Message = 'AGENTS.md missing sdd-test' },
-  @{ Path = 'AGENTS.md'; Pattern = 'decision-gate'; Message = 'AGENTS.md missing decision-gate' },
+  @{ Path = 'AGENTS.md'; Pattern = 'traceable-humanitarian-delivery-on-avalanche'; Message = 'AGENTS.md missing active change reference' },
   @{ Path = 'AGENTS.md'; Pattern = 'Playwright CLI'; Message = 'AGENTS.md missing Playwright CLI strategy' },
   @{ Path = 'AGENTS.md'; Pattern = 'No avanzar sin pruebas'; Message = 'AGENTS.md missing no-test gate policy' },
+  @{ Path = 'AGENTS.md'; Pattern = 'delivery event'; Message = 'AGENTS.md missing domain seed reference' },
   @{ Path = 'AGENTS.md'; Pattern = 'progress.md'; Message = 'AGENTS.md missing progress.md contract' },
-  @{ Path = 'docs/architecture.md'; Pattern = 'sdd-test'; Message = 'docs/architecture.md missing sdd-test' },
+  @{ Path = 'README.md'; Pattern = 'Avalanche C-Chain'; Message = 'README.md missing blockchain scope reference' },
+  @{ Path = 'docs/architecture.md'; Pattern = 'MilestoneEscrow'; Message = 'docs/architecture.md missing escrow architecture' },
   @{ Path = 'docs/testing-strategy.md'; Pattern = 'Playwright CLI'; Message = 'docs/testing-strategy.md missing Playwright CLI' },
-  @{ Path = 'docs/seed-fixtures.md'; Pattern = 'proyecto publico'; Message = 'docs/seed-fixtures.md missing fixture definition' },
+  @{ Path = 'docs/testing-strategy.md'; Pattern = 'captura offline'; Message = 'docs/testing-strategy.md missing offline journey' },
+  @{ Path = 'docs/seed-fixtures.md'; Pattern = 'delivery lot'; Message = 'docs/seed-fixtures.md missing fixture definition' },
   @{ Path = 'docs/mvp-loop.md'; Pattern = 'Avanzar solo por evidencia'; Message = 'docs/mvp-loop.md missing evidence rule' },
   @{ Path = 'docs/handoff-progress.md'; Pattern = 'progress.md'; Message = 'docs/handoff-progress.md missing progress.md guidance' },
+  @{ Path = 'docs/product/blockchain-scope.md'; Pattern = 'Avalanche C-Chain'; Message = 'blockchain-scope missing Avalanche C-Chain' },
+  @{ Path = 'docs/product/domain-rules.md'; Pattern = 'DeliveryEvent'; Message = 'domain-rules missing DeliveryEvent' },
+  @{ Path = 'docs/product/demo-script.md'; Pattern = 'releaseMilestone'; Message = 'demo-script missing releaseMilestone step' },
   @{ Path = '.github/PULL_REQUEST_TEMPLATE.md'; Pattern = 'sdd-test'; Message = 'PR template missing sdd-test reference' },
   @{ Path = '.github/PULL_REQUEST_TEMPLATE.md'; Pattern = 'decision-gate'; Message = 'PR template missing decision-gate' },
   @{ Path = '.github/PULL_REQUEST_TEMPLATE.md'; Pattern = 'progress.md'; Message = 'PR template missing progress.md reference' },
   @{ Path = '.atl/skill-registry.md'; Pattern = 'sdd-test'; Message = 'Registry missing sdd-test' },
-  @{ Path = '.atl/skill-registry.md'; Pattern = 'Next'; Message = 'Registry missing expanded columns' }
+  @{ Path = '.atl/skill-registry.md'; Pattern = 'traceable-humanitarian'; Message = 'Registry missing updated triggers' }
 )
 
 foreach ($check in $checks) {

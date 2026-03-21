@@ -19,9 +19,11 @@ jobs:
             test -f "$dir/spec.md"
             test -f "$dir/design.md"
             test -f "$dir/tasks.md"
+            test -f "$dir/progress.md"
           done
       - name: Check autonomous gate references
         run: |
-          grep -q "sdd-test" AGENTS.md
-          grep -q "decision-gate" AGENTS.md
-          grep -q "Playwright CLI" docs/testing-strategy.md
+          grep -q "traceable-humanitarian-delivery-on-avalanche" AGENTS.md
+          grep -q "Playwright CLI" AGENTS.md
+          grep -q "MilestoneEscrow" docs/architecture.md
+          grep -q "Avalanche C-Chain" docs/product/blockchain-scope.md

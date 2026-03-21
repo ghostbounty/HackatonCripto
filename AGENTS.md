@@ -12,7 +12,8 @@ Este archivo es el contrato operativo principal del repositorio para agentes aut
   - `docs/product/domain-rules.md`
   - `docs/product/blockchain-scope.md`
   - `docs/product/demo-script.md`
-- No mover, reescribir ni romper artifacts existentes en `docs/product/` ni en `changes/`.
+- El dominio vigente del repo es `traceable-humanitarian-delivery-on-avalanche`.
+- No mover la estructura de `docs/product/` ni romper artifacts existentes en `changes/`.
 
 ## Lugar obligatorio de artifacts por change
 
@@ -24,6 +25,12 @@ Cada cambio debe vivir en `changes/<change-name>/` y mantener, segun corresponda
 - `tasks.md`
 - `progress.md`
 - `verify-checklist.md` o `verify.md`
+
+## Change principal recomendado
+
+- El change activo por defecto del framework es `changes/traceable-humanitarian-delivery-on-avalanche/`.
+- Los changes historicos en `changes/` se preservan como referencia y no deben borrarse.
+- Si un slice pertenece al MVP vigente, debe trazarse contra `traceable-humanitarian-delivery-on-avalanche` salvo que exista evidencia documental para crear otro change.
 
 ## Flujo obligatorio por slice
 
@@ -94,13 +101,21 @@ Si cualquiera de estos puntos falla, el agente debe volver a `sdd-apply`, `sdd-t
 
 - La herramienta estandar para journeys end-to-end del repo es Playwright CLI.
 - "Pathwright" se normaliza como Playwright CLI dentro de este framework.
-- Las seeds demo son parte del contrato de prueba y deben representar fixtures del marketplace de la demo:
-  - proyecto,
-  - voluntario,
-  - tarea,
-  - merito,
-  - sponsorship.
+- Las seeds demo son parte del contrato de prueba y deben representar fixtures del MVP vigente:
+  - sponsor,
+  - campaign,
+  - milestone,
+  - delivery lot,
+  - operator,
+  - delivery event,
+  - payout execution.
 - Las pruebas deben cubrir al menos formularios y endpoints relevantes del slice antes de habilitar el siguiente avance.
+- Los journeys minimos del dominio vigente son:
+  - financiamiento de campana en escrow,
+  - registro offline de entrega con QR + GPS + timestamp,
+  - sincronizacion posterior de eventos,
+  - consolidacion de hito,
+  - liberacion programable de payout.
 - El resultado de cada checkpoint debe registrarse en `changes/<change-name>/progress.md` con:
   - estado general,
   - slice actual,
@@ -159,7 +174,7 @@ El agente debe detenerse y no continuar al siguiente slice si ocurre cualquiera 
 - falla `sdd-test`,
 - falla `sdd-verify`,
 - no existe evidencia suficiente para aprobar el gate,
-- se detecta riesgo de alterar `docs/product/` o changes preservados,
+- se detecta riesgo de alterar `changes/` preservados,
 - el mismo problema persiste despues de 2 reintentos dirigidos,
 - falta una decision de producto o acceso que el repo no puede resolver.
 
@@ -167,7 +182,8 @@ El agente debe detenerse y no continuar al siguiente slice si ocurre cualquiera 
 
 - Dominio funcional: `docs/product/`
 - Framework de trabajo: `docs/`
-- Changes: `changes/`
+- Change principal recomendado: `changes/traceable-humanitarian-delivery-on-avalanche/`
+- Changes historicos: `changes/`
 - Skills: `skills/`
 - Indice regenerable: `.atl/skill-registry.md`
 - Automatizacion: `scripts/`

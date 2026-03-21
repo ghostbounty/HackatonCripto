@@ -2,21 +2,29 @@
 
 ## Principio base
 
-La alineación del framework agrega estructura pero no reemplaza la persistencia documental existente.
+La alineacion del framework agrega estructura pero no reemplaza la persistencia documental existente.
 
-## Qué debe permanecer estable
+## Que debe permanecer estable
 
-- `docs/product/` como contexto funcional.
+- `docs/product/` como contexto funcional vigente.
 - `changes/` como historial y unidad de trabajo.
-- `.gitattributes` como configuración existente de fin de línea.
+- `.gitattributes` como configuracion existente de fin de linea.
 
-## Qué es regenerable
+## Que es regenerable
 
 - `.atl/skill-registry.md`
-- Cualquier índice auxiliar documentado por `scripts/setup.*`
+- cualquier indice auxiliar documentado por `scripts/setup.*`
 
 ## Contrato de compatibilidad
 
 - No mover artifacts funcionales existentes.
 - No asumir que un change nuevo invalida los changes previos.
 - Referir los documents preservados desde `README.md`, `AGENTS.md` y `docs/architecture.md`.
+
+## Persistencia del dominio vigente
+
+El hecho de reescribir `docs/product/` cambia la fuente de verdad del repo, pero no autoriza a borrar los changes historicos. El framework debe poder convivir con:
+
+- un dominio vigente humanitario,
+- changes historicos del dominio anterior,
+- evidencia nueva en `changes/traceable-humanitarian-delivery-on-avalanche/`.

@@ -1,6 +1,6 @@
 ---
 name: branch-pr
-description: Preparar la entrega de un change en una rama y un PR coherentes. Usar cuando el trabajo ya fue aplicado, probado y verificado, y se necesite resumir alcance, checks, artifacts afectados y criterio de aceptacion para revision.
+description: Preparar la entrega de un change en una rama y un PR coherentes con evidencias de funding, captura, sync o release segun el slice.
 ---
 
 # Proposito
@@ -25,7 +25,7 @@ Usar al final del flujo, antes de abrir o actualizar un PR.
 # Done criteria
 
 - Existe un change principal por PR.
-- El resumen incluye fase o slice, seeds usadas y evidencia de testing.
+- El resumen incluye slice, seeds usadas y evidencia de testing.
 - El PR deja claro si el agente puede seguir o si debe detenerse.
 
 # Blocking criteria
@@ -40,7 +40,7 @@ Usar al final del flujo, antes de abrir o actualizar un PR.
 # Pasos esperados
 
 1. Confirmar un change principal por PR.
-2. Resumir artifacts, fase y alcance.
+2. Resumir artifacts, slice y alcance.
 3. Referir validaciones ejecutadas.
 4. Preparar mensaje de branch o PR alineado al cambio.
 

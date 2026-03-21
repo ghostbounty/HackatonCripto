@@ -28,3 +28,11 @@ if ! command -v npx >/dev/null 2>&1; then
 else
   echo '[ok] npx detected. Playwright CLI workflows can be used by the autonomous testing strategy.'
 fi
+
+if ! command -v node >/dev/null 2>&1; then
+  echo '[warn] Hardhat and the Avalanche C-Chain demo tooling require Node.js.'
+fi
+
+if ! command -v python >/dev/null 2>&1 && ! command -v python3 >/dev/null 2>&1; then
+  echo '[warn] Python is recommended for backend scripts, fixture helpers and validator utilities.'
+fi

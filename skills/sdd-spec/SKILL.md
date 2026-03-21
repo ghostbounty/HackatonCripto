@@ -1,6 +1,6 @@
 ---
 name: sdd-spec
-description: Redactar o ajustar la especificacion delta de un change en changes/<change-name>/spec.md. Usar cuando sea necesario formalizar requisitos ADDED, MODIFIED, REMOVED y escenarios de aceptacion sobre la base de docs/product.
+description: Redactar o ajustar la especificacion delta de un change sobre funding, delivery events, offline sync, milestones y payout execution.
 ---
 
 # Proposito

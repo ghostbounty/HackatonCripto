@@ -1,6 +1,6 @@
 ---
 name: sdd-tasks
-description: Desglosar un change en tareas accionables dentro de changes/<change-name>/tasks.md. Usar cuando se requiera convertir proposal, spec y design en un plan ejecutable y verificable por fases.
+description: Desglosar un change en tareas accionables para slices de funding, captura offline, sync, consolidacion y release programable.
 ---
 
 # Proposito

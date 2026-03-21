@@ -1,6 +1,6 @@
 ---
 name: skill-registry
-description: Regenerar y mantener el indice de skills del repositorio en .atl/skill-registry.md. Usar cuando se agreguen, renombren o ajusten skills, triggers, gates, inputs u outputs y se necesite sincronizar el catalogo operativo.
+description: Regenerar y mantener el indice de skills del repositorio en .atl/skill-registry.md a partir de la metadata actualizada del flujo SDD.
 ---
 
 # Proposito

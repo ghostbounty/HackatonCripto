@@ -1,6 +1,6 @@
 ---
 name: sdd-verify
-description: Verificar que un change y la estructura del repositorio cumplan criterios explicitos. Usar cuando se deban ejecutar checks, completar verify-checklist, validar skills, scripts, testing y compatibilidad con docs/product y changes existentes.
+description: Verificar que un change y la estructura del repositorio cumplan criterios explicitos del flujo SDD y del dominio humanitario vigente.
 ---
 
 # Proposito

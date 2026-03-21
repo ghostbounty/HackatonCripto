@@ -1,6 +1,6 @@
 ---
 name: sdd-design
-description: Redactar o ajustar el diseno tecnico de un change en changes/<change-name>/design.md. Usar cuando la spec requiera decisiones de arquitectura, modelo de datos, integracion, persistencia o tradeoffs antes de ejecutar tareas.
+description: Redactar o ajustar el diseno tecnico de un change con foco en Avalanche C-Chain, MilestoneEscrow, backend verificador y PWA offline-first.
 ---
 
 # Proposito

@@ -14,6 +14,7 @@ Usar esta estructura en `changes/<change-name>/progress.md`.
 
 - Slice:
 - Objetivo del slice:
+- Actor o flujo del dominio:
 - Responsable actual:
 
 ## Ultimo gate aprobado
@@ -42,6 +43,8 @@ Usar esta estructura en `changes/<change-name>/progress.md`.
 
 - Tipo:
 - Resultado:
+- Seeds o fixtures:
+- Journey o endpoint:
 - Referencia:
 
 ## Siguiente paso exacto

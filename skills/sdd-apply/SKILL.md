@@ -1,6 +1,6 @@
 ---
 name: sdd-apply
-description: Aplicar cambios en documentacion, codigo o estructura siguiendo el change activo. Usar cuando proposal, spec, design y tasks ya definieron que debe implementarse o alinearse dentro del repositorio.
+description: Aplicar cambios en documentacion, codigo o estructura siguiendo el change activo y dejando el slice listo para testing del dominio humanitario.
 ---
 
 # Proposito

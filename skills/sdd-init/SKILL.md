@@ -1,6 +1,6 @@
 ---
 name: sdd-init
-description: Inicializar o alinear la estructura base de un repositorio orientado a specification-driven development. Usar cuando se necesite crear o reparar la capa estructural del repo, verificar la presencia de docs, changes, skills, scripts, .atl o templates de colaboracion.
+description: Inicializar o alinear la estructura base de un repositorio orientado a specification-driven development para el MVP de entrega humanitaria trazable sobre Avalanche.
 ---
 
 # Proposito
@@ -21,12 +21,12 @@ Usar al crear el framework base, al bootstrappear un repo o al detectar carpetas
 
 - `AGENTS.md`
 - Estructura base del framework
-- Scripts y docs operativas minimas alineadas
+- Scripts y docs operativas minimas alineadas al dominio vigente
 
 # Done criteria
 
 - Las rutas raiz requeridas existen.
-- `docs/product/` y `changes/` se preservan intactos.
+- `docs/product/` y `changes/` se preservan intactos como estructura.
 - Hay instrucciones claras para instalar, regenerar y validar el framework.
 - El repo puede pasar a `sdd-explore`.
 

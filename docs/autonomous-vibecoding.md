@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Dejar el repo listo para que cualquier persona lo clone y pueda ejecutar un agente durante horas con supervision minima, manteniendo control de calidad y decisiones explicitas.
+Dejar el repo listo para que cualquier persona lo clone y pueda ejecutar un agente durante horas con supervision minima, manteniendo control de calidad y decisiones explicitas sobre el MVP de entrega humanitaria trazable.
 
 ## Contrato del agente
 
@@ -27,6 +27,14 @@ Cada iteracion sigue este patron:
 6. ejecutar pruebas del slice,
 7. verificar consistencia global,
 8. decidir si avanza o se detiene.
+
+## Foco del dominio
+
+El agente debe recordar que la demo no intenta resolver toda la ayuda humanitaria. El foco es cerrar esta secuencia:
+
+1. evento fisico de entrega registrado,
+2. evidencia sincronizada y consolidada,
+3. liberacion programable de fondos en Avalanche C-Chain.
 
 ## Checkpoints
 

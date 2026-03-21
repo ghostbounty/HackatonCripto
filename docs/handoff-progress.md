@@ -40,6 +40,15 @@ El agente activo debe actualizar `progress.md`:
 - ultima evidencia de testing o verify,
 - siguiente paso exacto para el siguiente agente.
 
+## Contenido esperado para el MVP vigente
+
+Cuando el change pertenezca a `traceable-humanitarian-delivery-on-avalanche`, `progress.md` debe dejar claro:
+
+- que actor o flujo del dominio cubre el slice,
+- que seed se preparo o verifico,
+- que journey de Playwright CLI se valido,
+- si el hito funcional probado fue funding, captura offline, sync o release.
+
 ## Regla de handoff
 
 Un change no es retomable si `progress.md` no refleja el estado real mas reciente. Si hay contradiccion entre el repo y `progress.md`, el agente debe corregir el archivo antes de continuar.
