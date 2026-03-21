@@ -23,6 +23,7 @@ El siguiente slice solo puede comenzar si:
 
 - el slice actual cumple su criterio de aceptacion,
 - el testing paso,
+- si el slice toca UI, PWA o formularios, hay evidencia de alineacion con `DESIGN.md`,
 - verify paso,
 - `progress.md` fue actualizado con el estado real mas reciente,
 - no hay bloqueos repetidos,

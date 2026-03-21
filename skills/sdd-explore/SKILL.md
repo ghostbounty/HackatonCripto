@@ -14,6 +14,7 @@ Usar al inicio de un change o antes de ajustar proposal, spec, design o tasks.
 # Inputs
 
 - `docs/product/`
+- `DESIGN.md` cuando el slice afecta UI, PWA, formularios, layout o frontend
 - `changes/<change-name>/`
 - `docs/architecture.md`
 - `README.md`
@@ -29,6 +30,7 @@ Usar al inicio de un change o antes de ajustar proposal, spec, design o tasks.
 
 - Se leyeron los artifacts funcionales obligatorios del dominio.
 - Se identificaron changes relacionados y restricciones operativas.
+- Si el slice toca interfaz, se relevo `DESIGN.md` y sus restricciones visuales relevantes.
 - Se documentaron riesgos, dependencias y supuestos relevantes.
 - El agente puede proponer sin preguntas evitables.
 
@@ -44,10 +46,11 @@ Usar al inicio de un change o antes de ajustar proposal, spec, design o tasks.
 # Pasos esperados
 
 1. Leer `docs/product/`.
-2. Identificar changes relacionados en `changes/`.
-3. Revisar la documentacion operativa del framework.
-4. Resumir restricciones, dependencias y decisiones previas.
-5. Preparar un mapa de impacto para proposal, spec, design y tasks.
+2. Leer `DESIGN.md` si el slice afecta interfaz.
+3. Identificar changes relacionados en `changes/`.
+4. Revisar la documentacion operativa del framework.
+5. Resumir restricciones, dependencias y decisiones previas.
+6. Preparar un mapa de impacto para proposal, spec, design y tasks.
 
 # Reglas de autonomia
 
@@ -58,6 +61,7 @@ Usar al inicio de un change o antes de ajustar proposal, spec, design o tasks.
 # Rutas concretas del repo
 
 - `docs/product/`
+- `DESIGN.md`
 - `changes/`
 - `docs/`
 - `.atl/`

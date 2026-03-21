@@ -13,6 +13,7 @@ El agente debe:
 - registrar supuestos cuando el repo no resuelva un detalle menor,
 - persistir el estado vivo del change en `changes/<change-name>/progress.md`,
 - validar con frecuencia,
+- consultar `DESIGN.md` al tocar UI, PWA, formularios o layout,
 - detener el avance cuando falle un gate.
 
 ## Loop operativo
@@ -21,7 +22,7 @@ Cada iteracion sigue este patron:
 
 1. descubrir el contexto del slice,
 2. proponer y especificar lo minimo necesario,
-3. disenar para testabilidad,
+3. disenar para testabilidad y alineacion visual cuando aplique,
 4. implementar solo el slice actual,
 5. preparar seeds demo,
 6. ejecutar pruebas del slice,
@@ -42,6 +43,7 @@ El agente debe recordar que la demo no intenta resolver toda la ayuda humanitari
 - No esperar al final de una sesion larga para validar.
 - Dejar evidencia corta sobre el estado del gate.
 - Actualizar `progress.md` en cada checkpoint para que otro agente pueda retomar sin historial de chat.
+- En slices de interfaz, registrar tambien si la implementacion sigue `DESIGN.md` o que desviacion controlada se acepto.
 
 ## Reintentos
 

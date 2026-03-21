@@ -15,6 +15,7 @@ Usar inmediatamente despues de `sdd-apply` y antes de `sdd-verify`.
 
 - Slice activo ya implementado o alineado
 - `docs/product/`
+- `DESIGN.md` para comprobar cumplimiento visual en slices UI
 - `docs/testing-strategy.md`
 - `docs/seed-fixtures.md`
 - Scripts de instalacion, setup y validacion
@@ -33,6 +34,7 @@ Usar inmediatamente despues de `sdd-apply` y antes de `sdd-verify`.
 - El entorno minimo de testing fue comprobado.
 - Las seeds demo relevantes al slice existen, se prepararon o se verificaron.
 - Se validaron formularios y endpoints del slice con Playwright CLI o con evidencia equivalente prevista por el repo.
+- Si el slice toca interfaz, se dejo evidencia breve de conformidad o desviacion respecto de `DESIGN.md`.
 - Se registraron claramente resultados, fallas y supuestos.
 - Existe una conclusion binaria: `pass`, `retry-needed` o `stop`.
 - `progress.md` deja la ultima evidencia de testing y el siguiente paso exacto.
@@ -63,8 +65,9 @@ Usar inmediatamente despues de `sdd-apply` y antes de `sdd-verify`.
    - payout execution.
 3. Ejecutar o guiar la validacion de journeys clave con Playwright CLI.
 4. Comprobar formularios y endpoints afectados por el slice.
-5. Dejar evidencia corta y accionable para el gate siguiente.
-6. Registrar el resultado en `progress.md`.
+5. Si el slice afecta interfaz, contrastar componentes y layout contra `DESIGN.md`.
+6. Dejar evidencia corta y accionable para el gate siguiente.
+7. Registrar el resultado en `progress.md`.
 
 # Reglas de autonomia
 
@@ -77,6 +80,7 @@ Usar inmediatamente despues de `sdd-apply` y antes de `sdd-verify`.
 # Rutas concretas del repo
 
 - `docs/product/`
+- `DESIGN.md`
 - `docs/testing-strategy.md`
 - `docs/seed-fixtures.md`
 - `scripts/`

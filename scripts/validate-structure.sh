@@ -8,6 +8,7 @@ required_paths=(
   "AGENTS.md"
   "README.md"
   "CONTRIBUTING.md"
+  "DESIGN.md"
   "skills"
   "scripts"
   "examples"
@@ -73,18 +74,25 @@ done
 [[ -f ".atl/skill-registry.md" ]] || { echo "Missing generated registry" >&2; exit 1; }
 
 grep -q "traceable-humanitarian-delivery-on-avalanche" AGENTS.md || { echo "AGENTS.md missing active change reference" >&2; exit 1; }
+grep -q "DESIGN.md" AGENTS.md || { echo "AGENTS.md missing DESIGN.md contract" >&2; exit 1; }
 grep -q "Playwright CLI" AGENTS.md || { echo "AGENTS.md missing Playwright CLI strategy" >&2; exit 1; }
 grep -q "No avanzar sin pruebas" AGENTS.md || { echo "AGENTS.md missing no-test gate policy" >&2; exit 1; }
 grep -q "delivery event" AGENTS.md || { echo "AGENTS.md missing domain seed reference" >&2; exit 1; }
 grep -q "progress.md" AGENTS.md || { echo "AGENTS.md missing progress.md contract" >&2; exit 1; }
 
 grep -q "Avalanche C-Chain" README.md || { echo "README.md missing blockchain scope reference" >&2; exit 1; }
+grep -q "DESIGN.md" README.md || { echo "README.md missing DESIGN.md reference" >&2; exit 1; }
 grep -q "MilestoneEscrow" docs/architecture.md || { echo "docs/architecture.md missing escrow architecture" >&2; exit 1; }
+grep -q "DESIGN.md" docs/architecture.md || { echo "docs/architecture.md missing DESIGN.md reference" >&2; exit 1; }
+grep -q "DESIGN.md" docs/autonomous-vibecoding.md || { echo "docs/autonomous-vibecoding.md missing DESIGN.md guidance" >&2; exit 1; }
 grep -q "Playwright CLI" docs/testing-strategy.md || { echo "docs/testing-strategy.md missing Playwright CLI" >&2; exit 1; }
+grep -q "DESIGN.md" docs/testing-strategy.md || { echo "docs/testing-strategy.md missing DESIGN.md testing rule" >&2; exit 1; }
 grep -q "captura offline" docs/testing-strategy.md || { echo "docs/testing-strategy.md missing offline journey" >&2; exit 1; }
 grep -q "delivery lot" docs/seed-fixtures.md || { echo "docs/seed-fixtures.md missing fixture definition" >&2; exit 1; }
 grep -q "Avanzar solo por evidencia" docs/mvp-loop.md || { echo "docs/mvp-loop.md missing evidence rule" >&2; exit 1; }
+grep -q "DESIGN.md" docs/mvp-loop.md || { echo "docs/mvp-loop.md missing DESIGN.md gate rule" >&2; exit 1; }
 grep -q "progress.md" docs/handoff-progress.md || { echo "docs/handoff-progress.md missing progress.md guidance" >&2; exit 1; }
+grep -q "DESIGN.md" docs/handoff-progress.md || { echo "docs/handoff-progress.md missing DESIGN.md handoff rule" >&2; exit 1; }
 grep -q "Avalanche C-Chain" docs/product/blockchain-scope.md || { echo "blockchain-scope missing Avalanche C-Chain" >&2; exit 1; }
 grep -q "DeliveryEvent" docs/product/domain-rules.md || { echo "domain-rules missing DeliveryEvent" >&2; exit 1; }
 grep -q "releaseMilestone" docs/product/demo-script.md || { echo "demo-script missing releaseMilestone step" >&2; exit 1; }
@@ -95,5 +103,6 @@ grep -q "progress.md" .github/PULL_REQUEST_TEMPLATE.md || { echo "PR template mi
 
 grep -q "sdd-test" .atl/skill-registry.md || { echo "Registry missing sdd-test" >&2; exit 1; }
 grep -q "traceable-humanitarian" .atl/skill-registry.md || { echo "Registry missing updated triggers" >&2; exit 1; }
+grep -q "DESIGN.md" .atl/skill-registry.md || { echo "Registry missing DESIGN.md references" >&2; exit 1; }
 
 echo "Structure validation passed"

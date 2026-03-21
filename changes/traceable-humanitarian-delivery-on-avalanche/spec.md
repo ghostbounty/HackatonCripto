@@ -76,6 +76,16 @@ El repo MUST tratar `docs/product/` como la fuente de verdad del dominio vigente
 - **When** un agente lee `AGENTS.md`, `docs/` y `skills/`
 - **Then** encuentra referencias normativas al flujo de funding, delivery, sync y release
 
+### Requirement: Repo-level visual source of truth for UI slices
+
+El repo MUST tratar `DESIGN.md` como la fuente de verdad visual transversal para slices que afecten Sponsor UI, NGO console, Field PWA, formularios, layout o frontend.
+
+#### Scenario: UI slice reads visual contract
+
+- **Given** un slice que modifica superficies de interfaz
+- **When** un agente recorre `AGENTS.md`, `docs/`, `skills/` y el change activo
+- **Then** encuentra que `DESIGN.md` debe consultarse y que `changes/<change-name>/design.md` sigue siendo el artifact tecnico del slice
+
 ## Acceptance Criteria
 
 - AC-01: funding de campaign deja fondos en escrow.
@@ -84,3 +94,4 @@ El repo MUST tratar `docs/product/` como la fuente de verdad del dominio vigente
 - AC-04: al volver la conectividad, los eventos llegan al backend y quedan `synced`.
 - AC-05: al cumplirse el milestone, `releaseMilestone` transfiere fondos segun payout rules.
 - AC-06: un milestone ya ejecutado no puede liberarse dos veces.
+- AC-07: los slices UI del framework referencian `DESIGN.md` como contrato visual transversal.

@@ -15,6 +15,7 @@ Usar despues de `sdd-test` y antes de archivar o abrir PR.
 
 - Cambio aplicado
 - Evidencia de `sdd-test`
+- `DESIGN.md` cuando el gate cubre una superficie UI
 - `scripts/validate-structure.sh`
 - `progress.md`
 - `verify-checklist.md` o `verify.md`
@@ -30,6 +31,7 @@ Usar despues de `sdd-test` y antes de archivar o abrir PR.
 
 - Las validaciones automaticas y estructurales fueron ejecutadas.
 - Existe evidencia suficiente de testing del slice.
+- Si el slice toca interfaz, existe evidencia suficiente de alineacion o desviacion justificada respecto de `DESIGN.md`.
 - El repo, el change y el flujo operativo siguen alineados.
 - Hay una decision clara sobre si se puede avanzar al siguiente slice.
 - `progress.md` refleja el estado real mas reciente del change.
@@ -52,9 +54,10 @@ Usar despues de `sdd-test` y antes de archivar o abrir PR.
 1. Ejecutar validaciones automaticas.
 2. Revisar estructura y links criticos.
 3. Confirmar evidencia de seeds y testing.
-4. Completar o actualizar artifacts de verify.
-5. Emitir decision de gate para continuar o detenerse.
-6. Confirmar que `progress.md` deja el handoff persistente correcto.
+4. Si el slice toca interfaz, revisar evidencia contra `DESIGN.md`.
+5. Completar o actualizar artifacts de verify.
+6. Emitir decision de gate para continuar o detenerse.
+7. Confirmar que `progress.md` deja el handoff persistente correcto.
 
 # Reglas de autonomia
 
@@ -66,6 +69,7 @@ Usar despues de `sdd-test` y antes de archivar o abrir PR.
 # Rutas concretas del repo
 
 - `docs/product/`
+- `DESIGN.md`
 - `changes/`
 - `.atl/`
 - `scripts/`

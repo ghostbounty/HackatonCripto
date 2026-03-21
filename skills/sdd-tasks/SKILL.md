@@ -16,6 +16,7 @@ Usar tras cerrar proposal, spec y design o cuando el checklist necesite mantenim
 - `proposal.md`
 - `spec.md`
 - `design.md`
+- `DESIGN.md` si el slice incluye interfaz
 - Convencion compartida de tareas
 
 # Outputs / artifacts
@@ -28,6 +29,7 @@ Usar tras cerrar proposal, spec y design o cuando el checklist necesite mantenim
 - El trabajo esta partido en slices pequenos.
 - Cada slice tiene criterio de aceptacion.
 - Cada slice declara testing, seeds y verify asociados.
+- Los slices UI incluyen tarea explicita de alineacion con `DESIGN.md`.
 - Cada slice puede reportarse de forma clara en `progress.md`.
 - El orden de ejecucion respeta el loop autonomo.
 
@@ -50,7 +52,8 @@ Usar tras cerrar proposal, spec y design o cuando el checklist necesite mantenim
    - seeds demo necesarias,
    - pruebas esperadas,
    - gate para continuar.
-5. Alinear `progress.md` con el primer slice y con el formato de handoff persistente.
+5. Si el slice toca interfaz, incluir trabajo explicito de alineacion visual y evidencia esperada contra `DESIGN.md`.
+6. Alinear `progress.md` con el primer slice y con el formato de handoff persistente.
 
 # Reglas de autonomia
 
@@ -62,5 +65,6 @@ Usar tras cerrar proposal, spec y design o cuando el checklist necesite mantenim
 # Rutas concretas del repo
 
 - `docs/product/`
+- `DESIGN.md`
 - `changes/`
 - `.atl/`

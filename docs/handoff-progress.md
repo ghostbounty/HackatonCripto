@@ -12,6 +12,7 @@ Ese archivo es el estado vivo de ejecucion. No reemplaza:
 
 - `tasks.md` como plan,
 - `design.md` como contrato tecnico,
+- `DESIGN.md` como contrato visual transversal cuando aplica,
 - `verify-checklist.md` o `verify.md` como criterio de validacion.
 
 ## Responsabilidad
@@ -48,6 +49,7 @@ Cuando el change pertenezca a `traceable-humanitarian-delivery-on-avalanche`, `p
 - que seed se preparo o verifico,
 - que journey de Playwright CLI se valido,
 - si el hito funcional probado fue funding, captura offline, sync o release.
+- si hubo superficie UI afectada, como se alineo o desvio respecto de `DESIGN.md`.
 
 ## Regla de handoff
 

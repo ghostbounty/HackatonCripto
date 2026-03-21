@@ -7,11 +7,14 @@ Este archivo es el contrato operativo principal del repositorio para agentes aut
 ## Contexto obligatorio del dominio
 
 - Tratar `docs/product/` como la fuente de verdad funcional y de negocio del hackathon.
+- Tratar `DESIGN.md` como la fuente de verdad visual transversal para cualquier slice que toque UI, PWA, formularios, layout o frontend.
 - Preservar y consultar especialmente:
   - `docs/product/hackathon-vision.md`
   - `docs/product/domain-rules.md`
   - `docs/product/blockchain-scope.md`
   - `docs/product/demo-script.md`
+- Preservar y consultar tambien:
+  - `DESIGN.md`
 - El dominio vigente del repo es `traceable-humanitarian-delivery-on-avalanche`.
 - No mover la estructura de `docs/product/` ni romper artifacts existentes en `changes/`.
 
@@ -25,6 +28,8 @@ Cada cambio debe vivir en `changes/<change-name>/` y mantener, segun corresponda
 - `tasks.md`
 - `progress.md`
 - `verify-checklist.md` o `verify.md`
+
+`DESIGN.md` no reemplaza `changes/<change-name>/design.md`. El primero define el lenguaje visual transversal del repo; el segundo sigue siendo el artifact tecnico y trazable del change.
 
 ## Change principal recomendado
 
@@ -53,6 +58,7 @@ Ninguna skill puede saltarse el gate anterior. `sdd-apply` no habilita avanzar p
 ## Politica de autonomia
 
 - Explorar antes de preguntar. El agente debe intentar resolver dudas con lectura del repo, docs, scripts, changes y configuraciones antes de escalar al usuario.
+- Consultar `DESIGN.md` antes de decidir patrones visuales, layout, componentes o criterios de UI para slices frontend.
 - Preferir decisiones derivables del repo. Si una decision puede inferirse desde artifacts existentes, no se debe abrir una pregunta.
 - Registrar supuestos. Cuando falte contexto no critico, el agente debe dejar el supuesto por escrito en el artifact correspondiente o en la evidencia de verify.
 - Persistir el handoff. El agente debe actualizar `changes/<change-name>/progress.md` en cada checkpoint, antes de cualquier `stop`, `retry-needed` o cambio de slice.
@@ -92,6 +98,7 @@ El gate entre slices solo puede aprobarse si se cumplen todos estos criterios:
 - Los cambios aplicados son minimos y trazables a un change.
 - Las seeds demo requeridas para formularios y endpoints fueron preparadas o verificadas.
 - Los journeys principales se validaron con Playwright CLI o con evidencia equivalente prevista por `sdd-test`.
+- Cuando el slice afecta interfaces, existe evidencia suficiente de que la implementacion respeta `DESIGN.md` o documenta cualquier desviacion deliberada.
 - `progress.md` refleja el estado real mas reciente del slice y el siguiente paso exacto para otro agente.
 - `sdd-verify` confirma consistencia del repo, del change y de los artifacts operativos.
 
@@ -110,6 +117,7 @@ Si cualquiera de estos puntos falla, el agente debe volver a `sdd-apply`, `sdd-t
   - delivery event,
   - payout execution.
 - Las pruebas deben cubrir al menos formularios y endpoints relevantes del slice antes de habilitar el siguiente avance.
+- Si el slice toca UI, PWA o formularios, las pruebas tambien deben dejar evidencia breve de alineacion con `DESIGN.md`.
 - Los journeys minimos del dominio vigente son:
   - financiamiento de campana en escrow,
   - registro offline de entrega con QR + GPS + timestamp,
@@ -159,6 +167,7 @@ Si cualquiera de estos puntos falla, el agente debe volver a `sdd-apply`, `sdd-t
 
 - Leer `README.md` y `docs/architecture.md` para entender el marco del repositorio.
 - Consultar `docs/product/` antes de proponer cambios funcionales.
+- Consultar `DESIGN.md` antes de proponer o aplicar cambios visuales.
 - Mantener un solo change por PR siempre que sea posible.
 - Usar `.atl/skill-registry.md` como indice regenerable, no como fuente unica de verdad.
 - Usar `scripts/install.sh` o `scripts/install.ps1` para prechecks del entorno autonomo.
@@ -181,6 +190,7 @@ El agente debe detenerse y no continuar al siguiente slice si ocurre cualquiera 
 ## Rutas clave
 
 - Dominio funcional: `docs/product/`
+- Dominio visual transversal: `DESIGN.md`
 - Framework de trabajo: `docs/`
 - Change principal recomendado: `changes/traceable-humanitarian-delivery-on-avalanche/`
 - Changes historicos: `changes/`

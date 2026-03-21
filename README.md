@@ -2,11 +2,14 @@
 
 Repositorio base para trabajar cambios orientados a especificacion (`changes/`) sobre el dominio funcional del hackathon documentado en `docs/product/`.
 
+El repo tambien mantiene un contrato visual transversal en `DESIGN.md` para slices con UI, PWA, formularios, layout o frontend.
+
 ## Que contiene este framework
 
 - Un indice operativo del repositorio en `AGENTS.md`.
 - Un conjunto de skills en `skills/` para recorrer un flujo SDD completo.
 - Documentacion del framework en `docs/` sin separar el trabajo operativo del dominio vigente.
+- Un `DESIGN.md` raiz como fuente de verdad visual del sistema para superficies UI.
 - Scripts en `scripts/` para instalar, preparar y validar la estructura.
 - Un registro regenerable de skills en `.atl/skill-registry.md`.
 - Templates de colaboracion en `.github/`.
@@ -47,6 +50,10 @@ Los siguientes artifacts contienen la fuente de verdad de negocio del MVP:
 - `docs/product/blockchain-scope.md`
 - `docs/product/demo-script.md`
 
+Para decisiones visuales y de interfaz, el artifact transversal es:
+
+- `DESIGN.md`
+
 ## Change principal recomendado
 
 - `changes/traceable-humanitarian-delivery-on-avalanche/`
@@ -63,18 +70,20 @@ Cada change debe mantener sus artifacts dentro de `changes/<change-name>/` y seg
 
 1. Leer `AGENTS.md` y `docs/architecture.md`.
 2. Revisar `docs/product/` para entender el contexto funcional.
-3. Crear o actualizar `changes/<change-name>/proposal.md`.
-4. Continuar con `spec.md`, `design.md`, `tasks.md`, `progress.md` y `verify-checklist.md`.
-5. Aplicar cambios de implementacion si corresponden.
-6. Ejecutar `scripts/setup.sh` o `scripts/setup.ps1` para refrescar artifacts auxiliares.
-7. Ejecutar `scripts/validate-structure.sh` o `scripts/validate-structure.ps1`.
-8. Abrir un solo PR que refiera un unico change principal y mantenga trazabilidad.
+3. Revisar `DESIGN.md` si el slice toca Sponsor UI, NGO console, Field PWA, formularios o layout.
+4. Crear o actualizar `changes/<change-name>/proposal.md`.
+5. Continuar con `spec.md`, `design.md`, `tasks.md`, `progress.md` y `verify-checklist.md`.
+6. Aplicar cambios de implementacion si corresponden.
+7. Ejecutar `scripts/setup.sh` o `scripts/setup.ps1` para refrescar artifacts auxiliares.
+8. Ejecutar `scripts/validate-structure.sh` o `scripts/validate-structure.ps1`.
+9. Abrir un solo PR que refiera un unico change principal y mantenga trazabilidad.
 
 ## Contrato de testing
 
 - Playwright CLI es la herramienta estandar para validar journeys end-to-end.
 - Las seeds minimas del dominio vigente cubren sponsor, campaign, milestone, delivery lot, operator, delivery event y payout execution.
 - Ningun slice se considera terminado sin evidencia de `sdd-test`, `sdd-verify` y actualizacion de `progress.md`.
+- En slices UI, `sdd-test` y `sdd-verify` tambien deben confirmar alineacion razonable con `DESIGN.md`.
 
 ## Comandos utiles
 
@@ -90,6 +99,7 @@ pwsh ./scripts/validate-structure.ps1
 ## Lecturas relacionadas
 
 - Framework y decisiones: `docs/architecture.md`
+- Sistema visual transversal: `DESIGN.md`
 - Instalacion y bootstrap: `docs/installation.md`
 - Conceptos del flujo: `docs/concepts.md`
 - Persistencia de artifacts: `docs/persistence.md`

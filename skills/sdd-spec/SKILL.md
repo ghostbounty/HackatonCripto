@@ -15,6 +15,7 @@ Usar despues de la propuesta y antes de diseno o implementacion.
 
 - `proposal.md`
 - Reglas de `docs/product/`
+- `DESIGN.md` cuando la aceptacion dependa de comportamiento visual o UX
 - Changes relacionados en `changes/`
 
 # Outputs / artifacts
@@ -25,6 +26,7 @@ Usar despues de la propuesta y antes de diseno o implementacion.
 
 - Los cambios funcionales estan expresados como deltas claros.
 - Hay escenarios de aceptacion verificables.
+- Si el slice toca interfaz, la spec captura restricciones visuales o de UX que afecten aceptacion.
 - El criterio de prueba del slice queda explicitado.
 - La spec es consistente con el dominio y el loop autonomo.
 
@@ -42,7 +44,8 @@ Usar despues de la propuesta y antes de diseno o implementacion.
 1. Traducir intencion a deltas claros.
 2. Redactar secciones `ADDED`, `MODIFIED` o `REMOVED`.
 3. Anadir escenarios Given/When/Then.
-4. Declarar que evidencia debera producir `sdd-test`.
+4. Incorporar restricciones de UI y UX derivadas de `DESIGN.md` cuando apliquen.
+5. Declarar que evidencia debera producir `sdd-test`.
 
 # Reglas de autonomia
 
@@ -52,5 +55,6 @@ Usar despues de la propuesta y antes de diseno o implementacion.
 # Rutas concretas del repo
 
 - `docs/product/`
+- `DESIGN.md`
 - `changes/`
 - `.atl/`

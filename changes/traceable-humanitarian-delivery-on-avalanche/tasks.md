@@ -4,18 +4,22 @@
 
 - [x] Reescribir `docs/product/` para que sea la fuente de verdad del MVP humanitario.
 - [x] Alinear `AGENTS.md`, `docs/`, `skills/`, `scripts/` y `.github/`.
+- [x] Incorporar `DESIGN.md` como contrato visual transversal del repo para slices UI.
+- [x] Alinear `README.md`, docs operativas y validadores para usar `DESIGN.md` sin reemplazar `changes/<change-name>/design.md`.
 - [x] Regenerar `.atl/skill-registry.md`.
 
 Acceptance:
 
 - El framework deja de referenciar normativamente el marketplace anterior.
+- `DESIGN.md` existe en la raiz y forma parte del contrato operativo base del repo.
+- El framework obliga a consultar `DESIGN.md` en slices con UI, PWA, formularios o layout.
 - El repo valida estructura y dominio vigente con scripts.
 
 Testing and verify:
 
 - Ejecutar `scripts/setup.ps1`.
-- Ejecutar `scripts/validate-structure.ps1`.
-- Verificar que el registry y los templates reflejen el nuevo dominio.
+- Ejecutar `scripts/validate-structure.ps1` y `scripts/validate-structure.sh`.
+- Verificar referencias a `DESIGN.md` en docs, skills y registry.
 
 ## Slice 2: Milestone escrow foundation
 

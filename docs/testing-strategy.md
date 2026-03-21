@@ -17,6 +17,7 @@ Cada slice debe validar, segun aplique:
 - formularios afectados,
 - endpoints afectados,
 - journey principal de usuario ligado al slice,
+- alineacion visual con `DESIGN.md` para superficies UI o PWA,
 - evidencia breve de resultado.
 
 ## Journeys minimos del MVP vigente
@@ -42,6 +43,7 @@ La evidencia debe indicar:
 - que seeds demo se usaron,
 - que journey se probo,
 - que formulario o endpoint se valido,
+- que comprobacion visual o de UI se realizo cuando el slice afecta interfaz,
 - que fallo o paso.
 
 ## Relacion con verify
@@ -54,3 +56,4 @@ La evidencia debe indicar:
 - Repetir pruebas pequenas y dirigidas despues de cada cambio relevante.
 - No sustituir pruebas por inspeccion superficial del codigo.
 - Priorizar la prueba del flujo demo antes que coberturas accesorias.
+- Si el slice toca interfaz, comparar la implementacion contra `DESIGN.md` y dejar nota breve de cumplimiento o desviacion.
